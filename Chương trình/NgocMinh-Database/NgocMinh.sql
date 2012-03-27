@@ -97,6 +97,12 @@ CREATE TABLE PhieuChi
 	constraint fk_PC_KC foreign key (MaKC) references KhoanChi(MaKC)
 )
 
+CREATE TABLE LoaiPhieu
+(
+	MaLoaiPhieu int primary key identity,
+	TenLoaiPhieu nvarchar(50)
+)
+
 CREATE TABLE GiaoDichKH
 (
 	MaGD int primary key identity,
@@ -128,12 +134,6 @@ CREATE TABLE PhieuNhanNoKH
 	TinhTrang bit default(0),
 	SoPhieuNhanNoKHCTCuoi int,
 	constraint fk_PNNKH_GD foreign key (MaGD) references GiaoDichKH(MaGD)
-)
-
-CREATE TABLE LoaiPhieu
-(
-	MaLoaiPhieu int primary key identity,
-	TenLoaiPhieu nvarchar(50)
 )
 
 CREATE TABLE PhieuNhanNoKHCT

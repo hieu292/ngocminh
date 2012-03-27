@@ -32,9 +32,9 @@ namespace QuanLyGiaoDichTaiChinh
         {
             if (dgvNguoiDung.RowCount > 0)
             {
-                if (dgvNguoiDung.Rows[dgvNguoiDung.CurrentCell.RowIndex].Cells[0].Value.ToString() == "1") ;
+                if (dgvNguoiDung.Rows[dgvNguoiDung.CurrentCell.RowIndex].Cells[0].Value.ToString() == "1")
                 {
-                    MessageBox.Show("Đây là tài khoản mặc định bạn không thể sửa?", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đây là tài khoản mặc định bạn không thể xóa!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (MessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -48,16 +48,18 @@ namespace QuanLyGiaoDichTaiChinh
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            DataRow m_Row = m_NguoiDungCtrl.ThemDongMoi();
-            m_Row["MaNguoiDung"] = null;
-            m_Row["MaLoai"] = "1";
+            frmThemNguoiDung frm = new frmThemNguoiDung(m_NguoiDungCtrl);
+            frm.ShowDialog();
+            /*DataRow m_Row = m_NguoiDungCtrl.ThemDongMoi();
+            m_Row["MaNguoiDung"] = DBNull.Value;
+            m_Row["MaLoaiNguoiDung"] = "1";
             m_Row["TenNguoiDung"] = "";
             m_Row["TenDangNhap"] = "";
             m_Row["MatKhau"] = "";
             m_NguoiDungCtrl.ThemNguoiDung(m_Row);
             bindingNavigatorNguoiDung.BindingSource.MoveLast();
             if (dgvNguoiDung.RowCount > 0)
-                bindingNavigatorDeleteItem.Enabled = true;
+                bindingNavigatorDeleteItem.Enabled = true;*/
         }
 
         public Boolean KiemTraTruocKhiLuu(String cellString)
