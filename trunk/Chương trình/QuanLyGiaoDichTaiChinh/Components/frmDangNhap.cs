@@ -35,12 +35,12 @@ namespace QuanLyGiaoDichTaiChinh
                 return;
             }
 
-            if (txtPassword.Text == "")
+            /*if (txtPassword.Text == "")
             {
                 lblLoiTenDangNhap.Text = "";
                 lblLoiMatKhau.Text = "Bạn chưa nhập mật khẩu!";
                 return;
-            }
+            }*/
 
             int ketQua = m_NguoiDungCtrl.DangNhap(txtUsername.Text, txtPassword.Text);
 

@@ -1,4 +1,4 @@
-﻿namespace QuanLyGiaoDichTaiChinh.Forms
+﻿namespace QuanLyGiaoDichTaiChinh
 {
     partial class frmThemNguoiDung
     {
@@ -55,12 +55,14 @@
             // 
             // txtTenDangNhap
             // 
+            this.txtTenDangNhap.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txtTenDangNhap.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDangNhap.Location = new System.Drawing.Point(153, 23);
             this.txtTenDangNhap.MaxLength = 100;
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(202, 23);
             this.txtTenDangNhap.TabIndex = 1;
-            this.txtTenDangNhap.TextChanged += new System.EventHandler(this.txtTenDangNhap_TextChanged);
+            this.txtTenDangNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDangNhap_KeyPress);
             // 
             // label2
             // 
@@ -153,6 +155,7 @@
             // 
             this.btnHuyBo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnHuyBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHuyBo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnHuyBo.Location = new System.Drawing.Point(274, 8);
             this.btnHuyBo.Name = "btnHuyBo";
@@ -197,6 +200,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmThemNguoiDung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM NGƯỜI DÙNG";
             this.Load += new System.EventHandler(this.frmThemNguoiDung_Load);
             this.panel1.ResumeLayout(false);

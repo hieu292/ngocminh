@@ -14,8 +14,8 @@ namespace QuanLyGiaoDichTaiChinh.Controller
         public void HienThiComboBox(ComboBox comboBox)
         {
             comboBox.DataSource = m_LoaiNguoiDungData.LayDsLoaiNguoiDung();
-            comboBox.DisplayMember = "TenLoaiND";
-            comboBox.ValueMember = "MaLoai";
+            comboBox.DisplayMember = "TenLoaiNguoiDung";
+            comboBox.ValueMember = "MaLoaiNguoiDung";
         }
         #endregion
 
@@ -23,10 +23,10 @@ namespace QuanLyGiaoDichTaiChinh.Controller
         public void HienThiDataGridViewComboBoxColumn(DataGridViewComboBoxColumn cmbColumn)
         {
             cmbColumn.DataSource = m_LoaiNguoiDungData.LayDsLoaiNguoiDung();
-            cmbColumn.DisplayMember = "TenLoaiND";
-            cmbColumn.ValueMember = "MaLoai";
-            cmbColumn.DataPropertyName = "MaLoai";
-            cmbColumn.HeaderText = "Loại người dùng";
+            cmbColumn.DisplayMember = "TenLoaiNguoiDung";
+            cmbColumn.ValueMember = "MaLoaiNguoiDung";
+            cmbColumn.DataPropertyName = "MaLoaiNguoiDung";
+            cmbColumn.HeaderText = "Nhóm người dùng";
         }
         #endregion
 

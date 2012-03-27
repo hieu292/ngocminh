@@ -85,37 +85,49 @@ namespace QuanLyGiaoDichTaiChinh
         #region Phân quyền
         private void QuyenChuaDangNhap()
         {
+            dongTatCaToolStripMenuItem.PerformClick();
             dangNhapToolStripMenuItem.Enabled = true;
             dangXuatToolStripMenuItem.Enabled = false;
             doiMatKhauToolStripMenuItem.Enabled = false;
             nguoiDungToolStripMenuItem.Enabled = false;
             quyDinhToolStripMenuItem.Enabled = false;
             danhMucToolStripMenuItem.Enabled = false;
-            traCuuToolStripMenuItem.Enabled = false;
+            quanLyChoVayToolstipMenuItem.Enabled = false;
+            quanLyVayToolStripMenuItem.Enabled = false;
+            quanLyThuChiToolStripMenuItem.Enabled = false;
+            timKiemToolStripMenuItem.Enabled = false;
             thongKeToolStripMenuItem.Enabled = false;
         }
 
-        private void QuyenGiaoVien()
+        private void QuyenNhanVienGiaoDich()
         {
+            dongTatCaToolStripMenuItem.PerformClick();
             dangNhapToolStripMenuItem.Enabled = false;
             dangXuatToolStripMenuItem.Enabled = true;
             doiMatKhauToolStripMenuItem.Enabled = true;
             nguoiDungToolStripMenuItem.Enabled = false;
             quyDinhToolStripMenuItem.Enabled = false;
-            danhMucToolStripMenuItem.Enabled = false;
-            traCuuToolStripMenuItem.Enabled = true;
+            danhMucToolStripMenuItem.Enabled = true;
+            quanLyChoVayToolstipMenuItem.Enabled = true;
+            quanLyVayToolStripMenuItem.Enabled = true;
+            quanLyThuChiToolStripMenuItem.Enabled = true;
+            timKiemToolStripMenuItem.Enabled = true;
             thongKeToolStripMenuItem.Enabled = true;
         }
 
-        private void QuyenBanGiamHieu()
+        private void QuyenQuanTriVien()
         {
+            dongTatCaToolStripMenuItem.PerformClick();
             dangNhapToolStripMenuItem.Enabled = false;
             dangXuatToolStripMenuItem.Enabled = true;
             doiMatKhauToolStripMenuItem.Enabled = true;
             nguoiDungToolStripMenuItem.Enabled = true;
             quyDinhToolStripMenuItem.Enabled = true;
             danhMucToolStripMenuItem.Enabled = true;
-            traCuuToolStripMenuItem.Enabled = true;
+            quanLyChoVayToolstipMenuItem.Enabled = true;
+            quanLyVayToolStripMenuItem.Enabled = true;
+            quanLyThuChiToolStripMenuItem.Enabled = true;
+            timKiemToolStripMenuItem.Enabled = true;
             thongKeToolStripMenuItem.Enabled = true;
         }
 
@@ -123,8 +135,8 @@ namespace QuanLyGiaoDichTaiChinh
         {
             switch (loaiND)
             {
-                case "LND001": QuyenBanGiamHieu(); break;
-                case "LND002": QuyenGiaoVien(); break;
+                case "1": QuyenQuanTriVien(); break;
+                case "2": QuyenNhanVienGiaoDich(); break;
                 default: QuyenChuaDangNhap(); break;
             }
         }
