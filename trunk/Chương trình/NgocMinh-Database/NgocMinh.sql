@@ -51,15 +51,20 @@ CREATE TABLE QuyDinh
 	TaiKhoanCo bigint default(0)
 )
 
+CREATE TABLE LoaiNguoiDung
+(
+	MaLoaiNguoiDung int primary key identity,
+	TenLoaiNguoiDung nvarchar(100)
+)
+
 CREATE TABLE NguoiDung
 (
-	MaNguoDung int primary key identity,
-	TenDangNhap varchar(50) not null,
-	MaKhau varchar(255) not null,
-	TenDayDu nvarchar(50),
-	NgaySinh datetime,
-	GioiTinh bit default(0),
-	LoaiNguoiDung bit default(0)
+	MaNguoiDung int primary key identity,
+	MaLoaiNguoiDung int not null,
+	TenDangNhap varchar(100) not null,
+	MatKhau varchar(255) not null,
+	TenNguoiDung nvarchar(100),
+	constraint fk_NguoiDung_LoaiNguoiDung foreign key(MaLoaiNguoiDung) references LoaiNguoiDung(MaLoaiNguoiDung)
 )
 
 CREATE TABLE PhieuThu
