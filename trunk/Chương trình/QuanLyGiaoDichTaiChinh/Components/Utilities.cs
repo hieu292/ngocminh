@@ -45,7 +45,6 @@ namespace QuanLyGiaoDichTaiChinh.Components
             String key = "minhngoc";
             byte[] keyArray;
             byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
-            MessageBox.Show(toDecrypt);
             if (useHashing)
             {
                 MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();

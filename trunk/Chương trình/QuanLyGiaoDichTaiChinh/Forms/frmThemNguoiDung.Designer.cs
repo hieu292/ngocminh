@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNhapLaiMatKhau = new System.Windows.Forms.TextBox();
+            this.txtMatKhauXacNhan = new System.Windows.Forms.TextBox();
             this.lblNhapLaiMatKhauMoi = new System.Windows.Forms.Label();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTenDayDu = new System.Windows.Forms.TextBox();
+            this.txtTenNguoiDung = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboLoaiNguoiDung = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -73,15 +73,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu:";
             // 
-            // txtNhapLaiMatKhau
+            // txtMatKhauXacNhan
             // 
-            this.txtNhapLaiMatKhau.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(153, 137);
-            this.txtNhapLaiMatKhau.MaxLength = 50;
-            this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
-            this.txtNhapLaiMatKhau.PasswordChar = '*';
-            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(202, 23);
-            this.txtNhapLaiMatKhau.TabIndex = 4;
+            this.txtMatKhauXacNhan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMatKhauXacNhan.Location = new System.Drawing.Point(153, 137);
+            this.txtMatKhauXacNhan.MaxLength = 50;
+            this.txtMatKhauXacNhan.Name = "txtMatKhauXacNhan";
+            this.txtMatKhauXacNhan.PasswordChar = '*';
+            this.txtMatKhauXacNhan.Size = new System.Drawing.Size(202, 23);
+            this.txtMatKhauXacNhan.TabIndex = 4;
             // 
             // lblNhapLaiMatKhauMoi
             // 
@@ -113,13 +113,14 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên đầy đủ:";
             // 
-            // txtTenDayDu
+            // txtTenNguoiDung
             // 
-            this.txtTenDayDu.Location = new System.Drawing.Point(153, 173);
-            this.txtTenDayDu.MaxLength = 100;
-            this.txtTenDayDu.Name = "txtTenDayDu";
-            this.txtTenDayDu.Size = new System.Drawing.Size(202, 23);
-            this.txtTenDayDu.TabIndex = 5;
+            this.txtTenNguoiDung.Location = new System.Drawing.Point(153, 173);
+            this.txtTenNguoiDung.MaxLength = 100;
+            this.txtTenNguoiDung.Name = "txtTenNguoiDung";
+            this.txtTenNguoiDung.Size = new System.Drawing.Size(202, 23);
+            this.txtTenNguoiDung.TabIndex = 5;
+            this.txtTenNguoiDung.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenNguoiDung_KeyDown);
             // 
             // label4
             // 
@@ -187,10 +188,10 @@
             this.Controls.Add(this.cboLoaiNguoiDung);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMatKhau);
-            this.Controls.Add(this.txtNhapLaiMatKhau);
+            this.Controls.Add(this.txtMatKhauXacNhan);
             this.Controls.Add(this.lblNhapLaiMatKhauMoi);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTenDayDu);
+            this.Controls.Add(this.txtTenNguoiDung);
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -213,11 +214,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox txtNhapLaiMatKhau;
+        public System.Windows.Forms.TextBox txtMatKhauXacNhan;
         private System.Windows.Forms.Label lblNhapLaiMatKhauMoi;
         public System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTenDayDu;
+        private System.Windows.Forms.TextBox txtTenNguoiDung;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHuyBo;

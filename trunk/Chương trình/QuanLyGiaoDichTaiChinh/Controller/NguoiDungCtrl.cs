@@ -14,6 +14,13 @@ namespace QuanLyGiaoDichTaiChinh.Controller
         NguoiDungInfo m_NguoiDungInfo = new NguoiDungInfo();
         LoaiNguoiDungInfo m_LoaiNguoiDungInfo = new LoaiNguoiDungInfo();
 
+        #region Lay row
+        public DataRow FindRow(int maNguoiDung)
+        {
+            return m_NguoiDungData.FindRow(maNguoiDung);
+        }
+        #endregion
+
         #region Hien thi ComboBox
         public void HienThiComboBox(ComboBox comboBox)
         {

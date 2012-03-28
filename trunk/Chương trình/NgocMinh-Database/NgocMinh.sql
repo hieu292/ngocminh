@@ -78,6 +78,7 @@ CREATE TABLE PhieuThu
 	Ton bigint,
 	GhiChu ntext,
 	TinhTrang bit default(0),
+	DuTru bigint,
 	constraint fk_PT_KH foreign key (MaKH) references KhachHang(MaKH),
 	constraint fk_PT_KT foreign key (MaKT) references KhoanThu(MaKT)
 )
@@ -93,6 +94,7 @@ CREATE TABLE PhieuChi
 	Ton bigint,
 	GhiChu ntext,
 	TinhTrang bit default(0),
+	DuTru bigint,
 	constraint fk_PC_NV foreign key (MaNV) references NhanVien(MaNV),
 	constraint fk_PC_KC foreign key (MaKC) references KhoanChi(MaKC)
 )

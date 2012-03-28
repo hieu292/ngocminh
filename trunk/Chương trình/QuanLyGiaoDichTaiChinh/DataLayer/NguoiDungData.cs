@@ -13,6 +13,8 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM NGUOIDUNG");
             m_NguoiDungData.Load(cmd);
+            DataColumn[] dc = {m_NguoiDungData.Columns[0]};
+            m_NguoiDungData.PrimaryKey = dc;
             return m_NguoiDungData;
         }
 
@@ -23,6 +25,11 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
 
             m_NguoiDungData.Load(cmd);
             return m_NguoiDungData;
+        }
+
+        public DataRow FindRow(int maNguoiDung)
+        {
+            return m_NguoiDungData.Rows.Find(maNguoiDung);
         }
 
         public DataRow ThemDongMoi()
