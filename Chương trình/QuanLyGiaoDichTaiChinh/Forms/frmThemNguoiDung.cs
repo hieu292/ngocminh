@@ -52,22 +52,22 @@ namespace QuanLyGiaoDichTaiChinh
                 }
             }
 
-            if (txtMatKhau.Text != txtNhapLaiMatKhau.Text)
+            if (txtMatKhau.Text != txtMatKhauXacNhan.Text)
             {
                 MessageBox.Show("Mật khẩu xác nhận không khớp. Vui lòng nhập lại!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNhapLaiMatKhau.Focus();
+                txtMatKhauXacNhan.Focus();
                 return;
             }
 
             DataRow m_Row = m_NguoiDungCtrl.ThemDongMoi();
             m_Row["MaNguoiDung"] = DBNull.Value;
             m_Row["MaLoaiNguoiDung"] = cboLoaiNguoiDung.SelectedValue;
-            m_Row["TenNguoiDung"] = txtTenDayDu.Text;
+            m_Row["TenNguoiDung"] = txtTenNguoiDung.Text;
             m_Row["TenDangNhap"] = txtTenDangNhap.Text;
             m_Row["MatKhau"] = Utilities.Encrypt(txtMatKhau.Text, true);
             m_NguoiDungCtrl.ThemNguoiDung(m_Row);
-            m_NguoiDungCtrl.LuuNguoiDung();
-            this.DialogResult = DialogResult.OK;
+            if(m_NguoiDungCtrl.LuuNguoiDung())
+                this.DialogResult = DialogResult.OK;
         }
 
         private void txtTenDangNhap_KeyPress(object sender, KeyPressEventArgs e)
@@ -77,6 +77,14 @@ namespace QuanLyGiaoDichTaiChinh
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void txtTenNguoiDung_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnThem.PerformClick();
+            }
         }
     }
 }

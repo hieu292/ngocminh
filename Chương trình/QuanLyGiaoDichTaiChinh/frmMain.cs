@@ -37,7 +37,7 @@ namespace QuanLyGiaoDichTaiChinh
             DataConnect.MoKetNoi();
             if (DataConnect.DaKetNoi)
             {
-                ketNoiCSDLToolStripMenuItem.Enabled = false;
+                //ketNoiCSDLToolStripMenuItem.Enabled = false;
                 DataConnect.DongKetNoi();
                 lblTinhTrangKetNoi.Text = "  Đã kết nối đến cơ sở dữ liệu " + Settings.Default.Database;
                 dangNhapToolStripMenuItem.PerformClick();
@@ -86,10 +86,12 @@ namespace QuanLyGiaoDichTaiChinh
         private void QuyenChuaDangNhap()
         {
             dongTatCaToolStripMenuItem.PerformClick();
-            dangNhapToolStripMenuItem.Enabled = true;
+            //dangNhapToolStripMenuItem.Enabled = true;
             dangXuatToolStripMenuItem.Enabled = false;
             doiMatKhauToolStripMenuItem.Enabled = false;
             nguoiDungToolStripMenuItem.Enabled = false;
+            saoLuuDuLieuToolStripMenuItem.Enabled = false;
+            phucHoiDuLieuToolStripMenuItem.Enabled = false;
             quyDinhToolStripMenuItem.Enabled = false;
             danhMucToolStripMenuItem.Enabled = false;
             quanLyChoVayToolstipMenuItem.Enabled = false;
@@ -102,10 +104,12 @@ namespace QuanLyGiaoDichTaiChinh
         private void QuyenNhanVienGiaoDich()
         {
             dongTatCaToolStripMenuItem.PerformClick();
-            dangNhapToolStripMenuItem.Enabled = false;
+            //dangNhapToolStripMenuItem.Enabled = false;
             dangXuatToolStripMenuItem.Enabled = true;
             doiMatKhauToolStripMenuItem.Enabled = true;
             nguoiDungToolStripMenuItem.Enabled = false;
+            saoLuuDuLieuToolStripMenuItem.Enabled = false;
+            phucHoiDuLieuToolStripMenuItem.Enabled = false;
             quyDinhToolStripMenuItem.Enabled = false;
             danhMucToolStripMenuItem.Enabled = true;
             quanLyChoVayToolstipMenuItem.Enabled = true;
@@ -118,10 +122,12 @@ namespace QuanLyGiaoDichTaiChinh
         private void QuyenQuanTriVien()
         {
             dongTatCaToolStripMenuItem.PerformClick();
-            dangNhapToolStripMenuItem.Enabled = false;
+            //dangNhapToolStripMenuItem.Enabled = false;
             dangXuatToolStripMenuItem.Enabled = true;
             doiMatKhauToolStripMenuItem.Enabled = true;
             nguoiDungToolStripMenuItem.Enabled = true;
+            saoLuuDuLieuToolStripMenuItem.Enabled = true;
+            phucHoiDuLieuToolStripMenuItem.Enabled = true;
             quyDinhToolStripMenuItem.Enabled = true;
             danhMucToolStripMenuItem.Enabled = true;
             quanLyChoVayToolstipMenuItem.Enabled = true;
@@ -172,7 +178,7 @@ namespace QuanLyGiaoDichTaiChinh
                 m_FrmKetNoiCSDL = new frmKetNoiCSDL();
             if (m_FrmKetNoiCSDL.ShowDialog() == DialogResult.OK)
             {
-                ketNoiCSDLToolStripMenuItem.Enabled = false;
+                //ketNoiCSDLToolStripMenuItem.Enabled = false;
                 huyKetNoiCSDLToolStripMenuItem.Enabled = true;
                 lblTinhTrangKetNoi.Text = "  Đã kết nối đến cơ sở dữ liệu " + Settings.Default.Database;
             }
@@ -181,7 +187,7 @@ namespace QuanLyGiaoDichTaiChinh
         private void huyKetNoiCSDLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataConnect.HuyKetNoi();
-            ketNoiCSDLToolStripMenuItem.Enabled = true;
+            //ketNoiCSDLToolStripMenuItem.Enabled = true;
             huyKetNoiCSDLToolStripMenuItem.Enabled = false;
             tabControl1.TabPages.Clear();
             btnDongTab.Visible = tabControl1.Visible = dongTatCaTrangKhacToolStripMenuItem.Visible = dongTatCaToolStripMenuItem.Visible = false;

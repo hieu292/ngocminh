@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using QuanLyGiaoDichTaiChinh.Controller;
 using QuanLyGiaoDichTaiChinh.Components;
+using QuanLyGiaoDichTaiChinh.Bussiness;
 
 namespace QuanLyGiaoDichTaiChinh
 {
@@ -50,16 +51,6 @@ namespace QuanLyGiaoDichTaiChinh
         {
             frmThemNguoiDung frm = new frmThemNguoiDung(m_NguoiDungCtrl);
             frm.ShowDialog();
-            /*DataRow m_Row = m_NguoiDungCtrl.ThemDongMoi();
-            m_Row["MaNguoiDung"] = DBNull.Value;
-            m_Row["MaLoaiNguoiDung"] = "1";
-            m_Row["TenNguoiDung"] = "";
-            m_Row["TenDangNhap"] = "";
-            m_Row["MatKhau"] = "";
-            m_NguoiDungCtrl.ThemNguoiDung(m_Row);
-            bindingNavigatorNguoiDung.BindingSource.MoveLast();
-            if (dgvNguoiDung.RowCount > 0)
-                bindingNavigatorDeleteItem.Enabled = true;*/
         }
 
         public Boolean KiemTraTruocKhiLuu(String cellString)
@@ -100,6 +91,12 @@ namespace QuanLyGiaoDichTaiChinh
         private void bindingNavigatorRefreshItem_Click(object sender, EventArgs e)
         {
             frmNguoiDung_Load(sender, e);
+        }
+
+        private void bindingNavigatorUpdateItem_Click(object sender, EventArgs e)
+        {
+            frmSuaNguoiDung frm = new frmSuaNguoiDung(m_NguoiDungCtrl, (int)dgvNguoiDung.Rows[dgvNguoiDung.CurrentCell.RowIndex].Cells[0].Value);
+            frm.ShowDialog();
         }
 
 
