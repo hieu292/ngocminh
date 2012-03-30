@@ -16,7 +16,6 @@ namespace QuanLyGiaoDichTaiChinh
         #region Fields
         NguoiDungCtrl m_NguoiDungCtrl = new NguoiDungCtrl();
         LoaiNguoiDungCtrl m_LoaiNguoiDungCtrl = new LoaiNguoiDungCtrl();
-        QuyDinh quyDinh = new QuyDinh();
         #endregion
         public frmNguoiDung()
         {

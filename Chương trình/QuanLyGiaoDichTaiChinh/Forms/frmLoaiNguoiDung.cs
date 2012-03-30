@@ -14,7 +14,6 @@ namespace QuanLyGiaoDichTaiChinh
     {
         #region Fields
         LoaiNguoiDungCtrl   m_LoaiNguoiDungCtrl = new LoaiNguoiDungCtrl();
-        QuyDinh             quyDinh             = new QuyDinh();
         #endregion
 
         #region Constructor
@@ -54,7 +53,7 @@ namespace QuanLyGiaoDichTaiChinh
                 bindingNavigatorDeleteItem.Enabled = true;
 
             DataRow m_Row       = m_LoaiNguoiDungCtrl.ThemDongMoi();
-            m_Row["MaLoai"]     = "LND" + quyDinh.LaySTT(dgvLoaiNguoiDung.Rows.Count + 1);
+            m_Row["MaLoai"] = DBNull.Value;
             m_Row["TenLoaiND"]  = "";
             m_LoaiNguoiDungCtrl.ThemLoaiNguoiDung(m_Row);
             bindingNavigatorLoaiNguoiDung.BindingSource.MoveLast();

@@ -103,12 +103,44 @@ namespace QuanLyGiaoDichTaiChinh.Components
                 return false;
             }
         }
+
+        public static int LaySoPhieuTruoc(int maLoaiPhieu)
+        {
+            DataService dS = new DataService();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 SoPhieuTruoc FROM LoaiPhieu WHERE MaLoaiPhieu = @maLoaiPhieu");
+            cmd.Parameters.Add("maLoaiPhieu", SqlDbType.Int).Value = maLoaiPhieu;
+            return (int)dS.ExecuteScalar(cmd);
+        }
+
+        public static Boolean BackupDatabase()
+        {
+            return false;
+        }
+
+        public static Boolean RestoreDatabase()
+        {
+
+        }
     }
     #endregion
 
     #region QuyDinh
-    public class QuyDinh
+    public static class QuyDinh
     {
+        public static String LayViTriSaoLuuMacDinh()
+        {
+            DataService dS = new DataService();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 ViTriSaoLuu FROM QuyDinh");
+            return dS.ExecuteScalar(cmd).ToString();
+        }
+
+        public static DateTime LayThoiDiemSaoLuuTiepTheo()
+        {
+            DataService dS = new DataService();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 ThoiDiemSaoLuuTiepTheo FROM QuyDinh");
+            return (DateTime)dS.ExecuteScalar(cmd);
+        }
+
         public static QuyDinhInfo LayThongTinTruong()
         {
             QuyDinhInfo m_Truong = new QuyDinhInfo();
@@ -124,8 +156,62 @@ namespace QuanLyGiaoDichTaiChinh.Components
 
             return m_Truong;
         }
+ 
+        public static DataTable LayDsQuyDinh()
+        {
+            DataService m_QuyDinhData = new DataService();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM QUYDINH");
+            m_QuyDinhData.Load(cmd);
+            return m_QuyDinhData;
+        }
 
-        public String ArrayToString(String[] array, int n)
+        public static Int64 LayTaiKhoanCo()
+        {
+            DataService m_QuyDinhData = new DataService();
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 TaiKhoanCo FROM QUYDINH");
+            return Convert.ToInt64(m_QuyDinhData.ExecuteScalar(cmd));
+        }
+
+        public static int CapNhatTaiKhoanCo(Int64 taiKhoanCo)
+        {
+            DataService m_QuyDinhData = new DataService();
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TaiKhoanCo = TaiKhoanCo + @taiKhoanCo");
+            cmd.Parameters.Add("taiKhoanCo", SqlDbType.BigInt).Value = taiKhoanCo;
+
+            return m_QuyDinhData.Load(cmd);
+        }
+
+        public static int CapNhatThongTinSaoLuu(int lichSaoLuu, String viTriSaoLuu)
+        {
+            DataService m_QuyDinhData = new DataService();
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET LichSaoLuu = @lichSaoLuu, ThoiDiemSaoLuuTiepTheo = dateadd(dd, @lichSaoLuu, getdate()), viTriSaoLuu = @viTriSaoLuu");
+            cmd.Parameters.Add("lichSaoLuu", SqlDbType.Int).Value = lichSaoLuu;
+            cmd.Parameters.Add("viTriSaoLuu", SqlDbType.VarChar).Value = viTriSaoLuu;
+
+            return m_QuyDinhData.Load(cmd);
+        }
+
+        public static int CapNhatThongTinCongTy(String tenTenCongTy, String diaChi, String dienThoai)
+        {
+            DataService m_QuyDinhData = new DataService();
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TenCongTy = @tenCongTy, DiaChi = @diaChi, DienThoai = @dienThoai");
+            cmd.Parameters.Add("tenCongTy", SqlDbType.NVarChar).Value = tenTenCongTy;
+            cmd.Parameters.Add("diaChi", SqlDbType.NVarChar).Value = diaChi;
+            cmd.Parameters.Add("dienThoai", SqlDbType.NVarChar).Value = dienThoai;
+
+            return m_QuyDinhData.Load(cmd);
+        }
+
+        public static int CapNhatTimKiemTuDong(Boolean timKiemTuDong)
+        {
+            DataService m_QuyDinhData = new DataService();
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TimKiemTuDong= @timKiemTuDong");
+            cmd.Parameters.Add("timKiemTuDong", SqlDbType.Bit).Value = timKiemTuDong;
+
+            return m_QuyDinhData.Load(cmd);
+        }
+
+        public static String ArrayToString(String[] array, int n)
         {
             String str = "";
             for (int i = 0; i < n; i++)
@@ -138,7 +224,7 @@ namespace QuanLyGiaoDichTaiChinh.Components
             return str;
         }
 
-        public Boolean KiemTraDiem(String diemSo)
+        public static Boolean KiemTraDiem(String diemSo)
         {
             IList<String> gioiHanDiem = new List<String>();
 
@@ -177,7 +263,7 @@ namespace QuanLyGiaoDichTaiChinh.Components
             }
         }
 
-        public Boolean KiemTraSiSo(int siSo)
+        public static Boolean KiemTraSiSo(int siSo)
         {
             DataService dS = new DataService();
             dS.Load(new SqlCommand("SELECT SiSoCanDuoi, SiSoCanTren FROM QUYDINH"));
@@ -191,7 +277,7 @@ namespace QuanLyGiaoDichTaiChinh.Components
                 return false;
         }
 
-        public Boolean KiemTraDoTuoi(DateTime ngaySinh)
+        public static Boolean KiemTraDoTuoi(DateTime ngaySinh)
         {
             DataService dS = new DataService();
             dS.Load(new SqlCommand("SELECT TuoiCanDuoi, TuoiCanTren FROM QUYDINH"));
@@ -207,7 +293,7 @@ namespace QuanLyGiaoDichTaiChinh.Components
                 return false;
         }
 
-        public String LaySTT(int autoNum)
+        public static String LaySTT(int autoNum)
         {
             if (autoNum < 10)
                 return "000" + autoNum;
