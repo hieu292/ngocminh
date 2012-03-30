@@ -15,37 +15,44 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
             return m_QuyDinhData;
         }
 
-        public int CapNhatQuyDinhSiSo(int siSoCanDuoi, int siSoCanTren)
+        public Int64 LayTaiKhoanCo()
         {
-            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET SiSoCanDuoi = @siSoCanDuoi, SiSoCanTren = @siSoCanTren");
-            cmd.Parameters.Add("siSoCanDuoi", SqlDbType.Int).Value  = siSoCanDuoi;
-            cmd.Parameters.Add("siSoCanTren", SqlDbType.Int).Value  = siSoCanTren;
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 TaiKhoanCo FROM QUYDINH");
+
+            return Convert.ToInt64(m_QuyDinhData.ExecuteScalar(cmd));
+        }
+
+        public int CapNhatTaiKhoanCo(Int64 taiKhoanCo)
+        {
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TaiKhoanCo = TaiKhoanCo + @taiKhoanCo");
+            cmd.Parameters.Add("taiKhoanCo", SqlDbType.BigInt).Value = taiKhoanCo;
 
             return m_QuyDinhData.Load(cmd);
         }
 
-        public int CapNhatQuyDinhDoTuoi(int tuoiCanDuoi, int tuoiCanTren)
+        public int CapNhatThongTinSaoLuu(int lichSaoLuu, String viTriSaoLuu)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TuoiCanDuoi = @tuoiCanDuoi, TuoiCanTren = @tuoiCanTren");
-            cmd.Parameters.Add("tuoiCanDuoi", SqlDbType.Int).Value = tuoiCanDuoi;
-            cmd.Parameters.Add("tuoiCanTren", SqlDbType.Int).Value = tuoiCanTren;
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET LichSaoLuu = @lichSaoLuu, ThoiDiemSaoLuuTiepTheo = dateadd(dd, @lichSaoLuu, getdate()), viTriSaoLuu = @viTriSaoLuu");
+            cmd.Parameters.Add("lichSaoLuu", SqlDbType.Int).Value = lichSaoLuu;
+            cmd.Parameters.Add("viTriSaoLuu", SqlDbType.VarChar).Value = viTriSaoLuu;
 
             return m_QuyDinhData.Load(cmd);
         }
 
-        public int CapNhatQuyDinhTruong(String tenTruong, String diaChiTruong)
+        public int CapNhatThongTinCongTy(String tenTenCongTy, String diaChi, String dienThoai)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TenTruong = @tenTruong, DiaChiTruong = @diaChiTruong");
-            cmd.Parameters.Add("tenTruong", SqlDbType.NVarChar).Value       = tenTruong;
-            cmd.Parameters.Add("diaChiTruong", SqlDbType.NVarChar).Value    = diaChiTruong;
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TenCongTy = @tenCongTy, DiaChi = @diaChi, DienThoai = @dienThoai");
+            cmd.Parameters.Add("tenCongTy", SqlDbType.NVarChar).Value       = tenTenCongTy;
+            cmd.Parameters.Add("diaChi", SqlDbType.NVarChar).Value    = diaChi;
+            cmd.Parameters.Add("dienThoai", SqlDbType.NVarChar).Value = dienThoai;
 
             return m_QuyDinhData.Load(cmd);
         }
 
-        public int CapNhatQuyDinhThangDiem(int thangDiem)
+        public int CapNhatTimKiemTuDong(Boolean timKiemTuDong)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET ThangDiem = @thangDiem");
-            cmd.Parameters.Add("thangDiem", SqlDbType.Int).Value = thangDiem;
+            SqlCommand cmd = new SqlCommand("UPDATE QUYDINH SET TimKiemTuDong= @timKiemTuDong");
+            cmd.Parameters.Add("timKiemTuDong", SqlDbType.Bit).Value = timKiemTuDong;
 
             return m_QuyDinhData.Load(cmd);
         }

@@ -240,106 +240,10 @@ namespace QuanLyGiaoDichTaiChinh
         }
         #endregion
         #region Danh mục
-        private void khoiLopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmKhoiLop());
-        }
-
-        private void lopHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmLop());
-        }
-
-        private void monHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmMonHoc());
-        }
-
-        private void hocKyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmHocKy());
-        }
-
-        private void namHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmNamHoc());
-        }
-
-        private void loaiDiemToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmLoaiDiem());
-        }
-
-        private void hocLucToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmHocLuc());
-        }
-
-        private void ketQuaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmKetQua());
-        }
-
-        private void hanhKiemToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmHanhKiem());
-        }
-
-        private void danTocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmDanToc());
-        }
-
-        private void tonGiaoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmTonGiao());
-        }
-
-        private void ngheNghiepToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmNgheNghiep());
-        }
-
-        private void hocSinhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmHocSinh());
-        }
-
-        private void giaoVienToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmGiaoVien());
-        }
+        
         #endregion
         #region Nghiệp vụ
-        private void nhapDiemTheoLopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmNhapDiemTheoLop());
-        }
-
-        private void nhapDiemTheoHocSinhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmNhapDiemTheoHocSinh());
-        }
-
-        private void nhapDiemThiLaiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmNhapDiemThiLai());
-        }
-
-        private void nhapHanhKiemTheoLopToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmNhapHanhKiemTheoLop());
-        }
-
-        private void phanLopHocSinhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmPhanLop());
-        }
-
-        private void phanCongGiaoVienToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmPhanCong());
-        }
+        
         #endregion
         #region Tra cứu
         private void traCuuHocSinhToolStripMenuItem_Click(object sender, EventArgs e)

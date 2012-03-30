@@ -23,8 +23,8 @@ namespace QuanLyGiaoDichTaiChinh
         #region Load
         private void frmQuyDinh_Load(object sender, EventArgs e)
         {
-            m_QuyDinhCtrl.HienThi(nudSiSoCanDuoi, nudSiSoCanTren, nudDoTuoiCanDuoi, nudDoTuoiCanTren, 
-                rdbThangDiem10, rdbThangDiem100, txtTenTruong, txtDiaChiTruong);
+            m_QuyDinhCtrl.HienThi(txtTenCongTy, txtDiaChi,txtDienThoai,lblTaiKhoanCo,
+                nudLichSaoLuu,txtViTriSaoLuu,lblThoiDiemSaoLuu,rdbBat,rdbTat);
         }
         #endregion
 
@@ -36,71 +36,40 @@ namespace QuanLyGiaoDichTaiChinh
 
         private void btnDongY_Click(object sender, EventArgs e)
         {
-            if (tabControlQuyDinh.SelectedTab == tabSiSo)
+            if (tabControlQuyDinh.SelectedTab == tabCongTy)
             {
-                if (nudSiSoCanDuoi.Value <= 10 || nudSiSoCanTren.Value >= 60)
-                    MessageBox.Show("Sĩ số phải nằm trong khoảng giới hạn 10 - 60!", "ERROR",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                {
-                    if(m_QuyDinhCtrl.CapNhatQuyDinhSiSo((int)nudSiSoCanDuoi.Value, (int)nudSiSoCanTren.Value) == 0)
-                        MessageBox.Show("Cập nhật thành công quy định về sĩ số!", "COMPLETED",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    m_QuyDinhCtrl.HienThi(nudSiSoCanDuoi, nudSiSoCanTren, nudDoTuoiCanDuoi, 
-                        nudDoTuoiCanTren, rdbThangDiem10, rdbThangDiem100, txtTenTruong, txtDiaChiTruong);
-                }
-            }
-            else if (tabControlQuyDinh.SelectedTab == tabDoTuoi)
-            {
-                if (nudDoTuoiCanDuoi.Value <= 10 || nudDoTuoiCanTren.Value >= 30)
-                    MessageBox.Show("Độ tuổi phải nằm trong khoảng giới hạn 10 - 30!", "ERROR", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                {
-                    if(m_QuyDinhCtrl.CapNhatQuyDinhDoTuoi((int)nudDoTuoiCanDuoi.Value, (int)nudDoTuoiCanTren.Value) == 0)
-                        MessageBox.Show("Cập nhật thành công quy định về độ tuổi!", "COMPLETED",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    m_QuyDinhCtrl.HienThi(nudSiSoCanDuoi, nudSiSoCanTren, nudDoTuoiCanDuoi,
-                        nudDoTuoiCanTren, rdbThangDiem10, rdbThangDiem100, txtTenTruong, txtDiaChiTruong);
-                }
-            }
-            else if (tabControlQuyDinh.SelectedTab == tabThongTinTruong)
-            {
-                if (txtTenTruong.Text == "")
-                    MessageBox.Show("Tên trường học là giá trị bắt buộc phải nhập!", "ERROR",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else if (txtDiaChiTruong.Text == "")
-                    MessageBox.Show("Địa chỉ trường là giá trị bắt buộc phải nhập!", "ERROR", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                {
-                    if(m_QuyDinhCtrl.CapNhatQuyDinhTruong(txtTenTruong.Text, txtDiaChiTruong.Text)==0)
-                        MessageBox.Show("Cập nhật thành công thông tin trường học!", "COMPLETED",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    m_QuyDinhCtrl.HienThi(nudSiSoCanDuoi, nudSiSoCanTren, nudDoTuoiCanDuoi, 
-                        nudDoTuoiCanTren, rdbThangDiem10, rdbThangDiem100, txtTenTruong, txtDiaChiTruong);
-                }
-            }
-            else if (tabControlQuyDinh.SelectedTab == tabThangDiem)
-            {
-                if (rdbThangDiem10.Checked == true)
-                {
-                    if(m_QuyDinhCtrl.CapNhatQuyDinhThangDiem(10)==0)
-                        MessageBox.Show("Cập nhật thành công quy định về thang điểm!", "COMPLETED",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    m_QuyDinhCtrl.HienThi(nudSiSoCanDuoi, nudSiSoCanTren, nudDoTuoiCanDuoi, 
-                        nudDoTuoiCanTren, rdbThangDiem10, rdbThangDiem100, txtTenTruong, txtDiaChiTruong);
-                }
-                else
-                {
-                    m_QuyDinhCtrl.CapNhatQuyDinhThangDiem(100);
-                    MessageBox.Show("Cập nhật thành công quy định về thang điểm!", "COMPLETED", 
+                if(m_QuyDinhCtrl.CapNhatThongTinCongTy(txtTenCongTy.Text, txtDiaChi.Text,txtDienThoai.Text) == 0)
+                    MessageBox.Show("Cập nhật thành công quy định về thông tin công ty!", "COMPLETED",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    m_QuyDinhCtrl.HienThi(nudSiSoCanDuoi, nudSiSoCanTren, nudDoTuoiCanDuoi, 
-                        nudDoTuoiCanTren, rdbThangDiem10, rdbThangDiem100, txtTenTruong, txtDiaChiTruong);
-                }
+                //frmQuyDinh_Load(sender, e);
+            }
+            else if (tabControlQuyDinh.SelectedTab == tabSaoLuu)
+            {
+                if (m_QuyDinhCtrl.CapNhatThongTinSaoLuu((int)nudLichSaoLuu.Value, txtViTriSaoLuu.Text) == 0)
+                    MessageBox.Show("Cập nhật thành công quy định về sao lưu!", "COMPLETED",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmQuyDinh_Load(sender, e);
+            }
+            else
+            {
+                if (m_QuyDinhCtrl.CapNhatTimKiemTuDong(rdbBat.Checked) == 0)
+                    MessageBox.Show("Cập nhật thành công quy định về tìm kiếm tự động!", "COMPLETED",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //frmQuyDinh_Load(sender, e);
             }
         }
         #endregion
+
+        private void btnDuyet_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.ShowNewFolderButton = true;
+            fbd.SelectedPath = txtViTriSaoLuu.Text;
+            fbd.Description = "Chọn thư mục mặc định để lưu tệp sao lưu";
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                txtViTriSaoLuu.Text = fbd.SelectedPath;
+            }
+        }
     }
 }

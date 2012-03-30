@@ -3,70 +3,63 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 using QuanLyGiaoDichTaiChinh.DataLayer;
+using QuanLyGiaoDichTaiChinh.Components;
 
 namespace QuanLyGiaoDichTaiChinh.Controller
 {
     public class QuyDinhCtrl
     {
-        QuyDinhData m_QuyDinhData = new QuyDinhData();
+        //QuyDinhData m_QuyDinhData = new QuyDinhData();
 
-        public void HienThi(NumericUpDown nudSiSoCanDuoi,
-                            NumericUpDown nudSiSoCanTren,
-                            NumericUpDown nudDoTuoiCanDuoi,
-                            NumericUpDown nudDoTuoiCanTren,
-                            RadioButton rdbThangDiem10,
-                            RadioButton rdbThangDiem100,
-                            TextBox txtTenTruong,
-                            TextBox txtDiaChiTruong)
+        public void HienThi(TextBox txtTenCongTy,
+                            TextBox txtDiaChi,
+                            TextBox txtDienThoai,
+                            Label lblTaiKhoanCo,
+                            NumericUpDown nudLichSaoLuu,
+                            TextBox txtViTriSaoLuu,
+                            Label lblThoiDiemSaoLuu,
+                            RadioButton rdbBat,
+                            RadioButton rdbTat)
         {
-            BindingSource bS = new BindingSource();
-            bS.DataSource = m_QuyDinhData.LayDsQuyDinh();
-
-            DataTable dT = m_QuyDinhData.LayDsQuyDinh();
+            DataTable dT = QuyDinh.LayDsQuyDinh();
             if (dT.Rows.Count == 0) return;
-            int thangDiem = Convert.ToInt32(dT.Rows[0]["ThangDiem"]);
-            if (thangDiem == 10)
-                rdbThangDiem10.Checked = true;
+            int timKiemTuDong = Convert.ToInt32(dT.Rows[0]["TimKiemTuDong"]);
+            if (timKiemTuDong==1)
+                rdbBat.Checked = true;
             else
-                rdbThangDiem100.Checked = true;
-
-            nudSiSoCanDuoi.DataBindings.Clear();
-            nudSiSoCanDuoi.DataBindings.Add("Value", bS, "SiSoCanDuoi");
-
-            nudSiSoCanTren.DataBindings.Clear();
-            nudSiSoCanTren.DataBindings.Add("Value", bS, "SiSoCanTren");
-
-            nudDoTuoiCanDuoi.DataBindings.Clear();
-            nudDoTuoiCanDuoi.DataBindings.Add("Value", bS, "TuoiCanDuoi");
-
-            nudDoTuoiCanTren.DataBindings.Clear();
-            nudDoTuoiCanTren.DataBindings.Add("Value", bS, "TuoiCanTren");
-
-            txtTenTruong.DataBindings.Clear();
-            txtTenTruong.DataBindings.Add("Text", bS, "TenTruong");
-
-            txtDiaChiTruong.DataBindings.Clear();
-            txtDiaChiTruong.DataBindings.Add("Text", bS, "DiaChiTruong");
+                rdbTat.Checked = true;
+            txtTenCongTy.Text = dT.Rows[0]["TenCongTy"].ToString();
+            txtDiaChi.Text = dT.Rows[0]["DiaChi"].ToString();
+            txtDienThoai.Text = dT.Rows[0]["DienThoai"].ToString();
+            lblTaiKhoanCo.Text = dT.Rows[0]["TaiKhoanCo"].ToString();
+            nudLichSaoLuu.Value = Convert.ToInt32(dT.Rows[0]["LichSaoLuu"]);
+            txtViTriSaoLuu.Text = dT.Rows[0]["ViTriSaoLuu"].ToString();
+            lblThoiDiemSaoLuu.Text = dT.Rows[0]["ThoiDiemSaoLuuTiepTheo"].ToString();
         }
 
-        public int CapNhatQuyDinhSiSo(int siSoCanDuoi, int siSoCanTren)
+        public int CapNhatTaiKhoanCo(Int64 taiKhoanCo)
         {
-            return m_QuyDinhData.CapNhatQuyDinhSiSo(siSoCanDuoi, siSoCanTren);
+            return QuyDinh.CapNhatTaiKhoanCo(taiKhoanCo);
         }
 
-        public int CapNhatQuyDinhDoTuoi(int tuoiCanDuoi, int tuoiCanTren)
+        public int CapNhatThongTinCongTy(String tenCongTy, String diaChi, String dienThoai)
         {
-            return m_QuyDinhData.CapNhatQuyDinhDoTuoi(tuoiCanDuoi, tuoiCanTren);
+            return QuyDinh.CapNhatThongTinCongTy(tenCongTy, diaChi, dienThoai);
         }
 
-        public int CapNhatQuyDinhTruong(String tenTruong, String diaChiTruong)
+        public int CapNhatThongTinSaoLuu(int lichSaoLuu, String viTriSaoLuu)
         {
-            return m_QuyDinhData.CapNhatQuyDinhTruong(tenTruong, diaChiTruong);
+            return QuyDinh.CapNhatThongTinSaoLuu(lichSaoLuu, viTriSaoLuu);
         }
 
-        public int CapNhatQuyDinhThangDiem(int thangDiem)
+        public int CapNhatTimKiemTuDong(Boolean timKiemTuDong)
         {
-            return m_QuyDinhData.CapNhatQuyDinhThangDiem(thangDiem);
+            return QuyDinh.CapNhatTimKiemTuDong(timKiemTuDong);
+        }
+
+        public Int64 LayTaiKhoanCo()
+        {
+            return QuyDinh.LayTaiKhoanCo();
         }
     }
 }

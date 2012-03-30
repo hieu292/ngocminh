@@ -150,18 +150,6 @@
     <Compile Include="DataLayer\PhanCongData.cs" />
     <Compile Include="DataLayer\QuyDinhData.cs" />
     <Compile Include="DataLayer\TonGiaoData.cs" />
-    <Compile Include="Forms\frmHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmHocSinh.Designer.cs">
-      <DependentUpon>frmHocSinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmLop.Designer.cs">
-      <DependentUpon>frmLop.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmThemNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,107 +186,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmKhoiLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmKhoiLop.Designer.cs">
-      <DependentUpon>frmKhoiLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmNhapDiemTheoLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmNhapDiemTheoLop.Designer.cs">
-      <DependentUpon>frmNhapDiemTheoLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmNhapDiemTheoHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmNhapDiemTheoHocSinh.Designer.cs">
-      <DependentUpon>frmNhapDiemTheoHocSinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmNhapHanhKiemTheoLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmNhapHanhKiemTheoLop.Designer.cs">
-      <DependentUpon>frmNhapHanhKiemTheoLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmDanToc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmDanToc.Designer.cs">
-      <DependentUpon>frmDanToc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmHanhKiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmHanhKiem.Designer.cs">
-      <DependentUpon>frmHanhKiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmNhapDiemThiLaiTheoLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmNhapDiemThiLaiTheoLop.Designer.cs">
-      <DependentUpon>frmNhapDiemThiLaiTheoLop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmHocLuc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmHocLuc.Designer.cs">
-      <DependentUpon>frmHocLuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmHocKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmHocKy.Designer.cs">
-      <DependentUpon>frmHocKy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmKetQua.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmKetQua.Designer.cs">
-      <DependentUpon>frmKetQua.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmLoaiDiem.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmLoaiDiem.Designer.cs">
-      <DependentUpon>frmLoaiDiem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmNguoiDung.Designer.cs">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmMonHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmMonHoc.Designer.cs">
-      <DependentUpon>frmMonHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmNamHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmNamHoc.Designer.cs">
-      <DependentUpon>frmNamHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmNgheNghiep.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmNgheNghiep.Designer.cs">
-      <DependentUpon>frmNgheNghiep.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmGiaoVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmGiaoVien.Designer.cs">
-      <DependentUpon>frmGiaoVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmTonGiao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmTonGiao.Designer.cs">
-      <DependentUpon>frmTonGiao.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmLoaiNguoiDung.cs">
       <SubType>Form</SubType>
@@ -317,12 +209,6 @@
     </Compile>
     <Compile Include="Forms\frmTraCuuHocSinh.Designer.cs">
       <DependentUpon>frmTraCuuHocSinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmPhanCong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmPhanCong.Designer.cs">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -347,12 +233,6 @@
     </Compile>
     <Compile Include="Components\frmQuyDinh.Designer.cs">
       <DependentUpon>frmQuyDinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmPhanLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmPhanLop.Designer.cs">
-      <DependentUpon>frmPhanLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frptInDanhSachHocSinh.cs">
       <SubType>Form</SubType>
@@ -392,18 +272,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmHocSinh.resx">
-      <DependentUpon>frmHocSinh.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmLop.resx">
-      <DependentUpon>frmLop.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmKhoiLop.resx">
-      <DependentUpon>frmKhoiLop.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmThemNguoiDung.resx">
       <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -428,68 +296,8 @@
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhapDiemTheoLop.resx">
-      <DependentUpon>frmNhapDiemTheoLop.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhapDiemTheoHocSinh.resx">
-      <DependentUpon>frmNhapDiemTheoHocSinh.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhapHanhKiemTheoLop.resx">
-      <DependentUpon>frmNhapHanhKiemTheoLop.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDanToc.resx">
-      <DependentUpon>frmDanToc.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmHanhKiem.resx">
-      <DependentUpon>frmHanhKiem.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhapDiemThiLaiTheoLop.resx">
-      <DependentUpon>frmNhapDiemThiLaiTheoLop.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmHocLuc.resx">
-      <DependentUpon>frmHocLuc.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmHocKy.resx">
-      <DependentUpon>frmHocKy.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmKetQua.resx">
-      <DependentUpon>frmKetQua.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmLoaiDiem.resx">
-      <DependentUpon>frmLoaiDiem.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMonHoc.resx">
-      <DependentUpon>frmMonHoc.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNamHoc.resx">
-      <DependentUpon>frmNamHoc.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNgheNghiep.resx">
-      <DependentUpon>frmNgheNghiep.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmGiaoVien.resx">
-      <DependentUpon>frmGiaoVien.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmTonGiao.resx">
-      <DependentUpon>frmTonGiao.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLoaiNguoiDung.resx">
@@ -502,10 +310,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTraCuuHocSinh.resx">
       <DependentUpon>frmTraCuuHocSinh.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPhanCong.resx">
-      <DependentUpon>frmPhanCong.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\frmDangNhap.resx">
@@ -522,10 +326,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\frmQuyDinh.resx">
       <DependentUpon>frmQuyDinh.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPhanLop.resx">
-      <DependentUpon>frmPhanLop.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frptInDanhSachHocSinh.resx">
