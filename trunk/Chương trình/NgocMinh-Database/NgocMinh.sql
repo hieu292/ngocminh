@@ -102,7 +102,8 @@ CREATE TABLE PhieuChi
 CREATE TABLE LoaiPhieu
 (
 	MaLoaiPhieu int primary key identity,
-	TenLoaiPhieu nvarchar(50)
+	TenLoaiPhieu nvarchar(50),
+	SoPhieuTruoc int default(0)
 )
 
 CREATE TABLE GiaoDichKH
