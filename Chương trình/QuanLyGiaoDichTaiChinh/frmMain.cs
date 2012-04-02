@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using QuanLyGiaoDichTaiChinh.Controller;
 using QuanLyGiaoDichTaiChinh.Components;
 using QuanLyGiaoDichTaiChinh.Properties;
-using QuanLyGiaoDichTaiChinh.Reports;
 
 namespace QuanLyGiaoDichTaiChinh
 {
@@ -230,7 +229,7 @@ namespace QuanLyGiaoDichTaiChinh
 
         private void quyDinhToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmQuyDinh().Show();
+            new frmQuyDinh().ShowDialog();
         }
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,52 +245,8 @@ namespace QuanLyGiaoDichTaiChinh
         
         #endregion
         #region Tra cứu
-        private void traCuuHocSinhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmTraCuuHocSinh());
-        }
-
-        private void traCuuGiaoVienToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmTraCuuGiaoVien());
-        }
-
-        private void traCuuLopHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frmTraCuuLopHoc());
-        }
         #endregion
         #region Thống kê
-        private void tkDiemHocKyTheoMonHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frptKetQuaHocKy_MonHoc());
-        }
-
-        private void tkDiemHocKyTtheoLopHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frptKetQuaHocKy_Lop());
-        }
-
-        private void tkDiemHocKyTheoHocSinhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frptKetQuaHocKy_HocSinh());
-        }
-
-        private void tkDiemCaNamTheoLopHocToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frptKetQuaCaNam_Lop());
-        }
-
-        private void tkDiemCaNamTheoMonHocToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            AddTab(new frptKetQuaCaNam_MonHoc());
-        }
-
-        private void tkDiemCaNamTheoHọcSinhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddTab(new frptKetQuaCaNam_HocSinh());
-        }
-
         #endregion
         #region Hiển thị
         private void thanhCongCuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -367,6 +322,31 @@ namespace QuanLyGiaoDichTaiChinh
         private void heThongToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void khachHangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmKhachHang());
+        }
+
+        private void nhaCungCapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmNhaCungCap());
+        }
+
+        private void nhanVienToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmNhanVien());
+        }
+
+        private void khoanThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmKhoanThu());
+        }
+
+        private void khoanChiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmKhoanChi());
         }
     }
 }

@@ -56,18 +56,24 @@ namespace QuanLyGiaoDichTaiChinh
             {
                 MessageBox.Show("Mật khẩu xác nhận không khớp. Vui lòng nhập lại!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMatKhauXacNhan.Focus();
+                txtMatKhauXacNhan.SelectAll();
                 return;
             }
-
+            if (m_NguoiDungCtrl.isDuplicate(txtTenDangNhap.Text))
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại. Vui lòng đổi tên đăng nhập khác!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenDangNhap.Focus();
+                txtTenDangNhap.SelectAll();
+                return;
+            }
             DataRow m_Row = m_NguoiDungCtrl.ThemDongMoi();
-            m_Row["MaNguoiDung"] = DBNull.Value;
+            m_Row["MaNguoiDung"] = -1;
             m_Row["MaLoaiNguoiDung"] = cboLoaiNguoiDung.SelectedValue;
             m_Row["TenNguoiDung"] = txtTenNguoiDung.Text;
             m_Row["TenDangNhap"] = txtTenDangNhap.Text;
             m_Row["MatKhau"] = Utilities.Encrypt(txtMatKhau.Text, true);
             m_NguoiDungCtrl.ThemNguoiDung(m_Row);
-            if(m_NguoiDungCtrl.LuuNguoiDung())
-                this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void txtTenDangNhap_KeyPress(object sender, KeyPressEventArgs e)

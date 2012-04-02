@@ -26,6 +26,7 @@ namespace QuanLyGiaoDichTaiChinh
         {
             m_LoaiNguoiDungCtrl.HienThiDataGridViewComboBoxColumn(colMaLoai);
             m_NguoiDungCtrl.HienThi(dgvNguoiDung, bindingNavigatorNguoiDung);
+            lblStatus.Text = "";
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace QuanLyGiaoDichTaiChinh
                 if (MessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     bindingNavigatorNguoiDung.BindingSource.RemoveCurrent();
+                    lblStatus.Text = "*";
                 }
             }
             if (dgvNguoiDung.RowCount == 0)
@@ -49,37 +51,8 @@ namespace QuanLyGiaoDichTaiChinh
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             frmThemNguoiDung frm = new frmThemNguoiDung(m_NguoiDungCtrl);
-            frm.ShowDialog();
-        }
-
-        public Boolean KiemTraTruocKhiLuu(String cellString)
-        {
-            foreach (DataGridViewRow row in dgvNguoiDung.Rows)
-            {
-                if (row.Cells[cellString].Value != null)
-                {
-                    String str = row.Cells[cellString].Value.ToString();
-                    if (str == "")
-                    {
-                        MessageBox.Show("Thông tin người dùng không hợp lệ!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
-        private void saveToolStripButton_Click(object sender, EventArgs e)
-        {
-            if (KiemTraTruocKhiLuu("colMaND") == true &&
-               KiemTraTruocKhiLuu("colMaLoai") == true &&
-               KiemTraTruocKhiLuu("colTenND") == true &&
-               KiemTraTruocKhiLuu("colTenDNhap") == true &&
-               KiemTraTruocKhiLuu("colMatKhau") == true)
-            {
-                bindingNavigatorPositionItem.Focus();
-                m_NguoiDungCtrl.LuuNguoiDung();
-            }
+            if(frm.ShowDialog() == DialogResult.OK)
+                lblStatus.Text = "*";
         }
 
         private void dgvNguoiDung_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -95,12 +68,20 @@ namespace QuanLyGiaoDichTaiChinh
         private void bindingNavigatorUpdateItem_Click(object sender, EventArgs e)
         {
             frmSuaNguoiDung frm = new frmSuaNguoiDung(m_NguoiDungCtrl, (int)dgvNguoiDung.Rows[dgvNguoiDung.CurrentCell.RowIndex].Cells[0].Value);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+                lblStatus.Text = "*";
         }
 
-
-
-
-
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (lblStatus.Text == "") return;
+            if (m_NguoiDungCtrl.LuuNguoiDung())
+            {
+                MessageBox.Show("Lưu thay đổi người dùng thành công!", "SUCCESS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmNguoiDung_Load(sender, e);
+            }
+            else
+                MessageBox.Show("Lưu thay đổi người dùng thất bại!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

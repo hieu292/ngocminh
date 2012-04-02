@@ -40,7 +40,7 @@ namespace QuanLyGiaoDichTaiChinh
                 this.Clear();
                 result = m_DataAdapter.Fill(this);
             }
-            catch
+            catch //(Exception e)
             {
                 //MessageBox.Show("Không thể thực thi câu lệnh SQL này!\nLỗi: " + e.Message, "ERROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }

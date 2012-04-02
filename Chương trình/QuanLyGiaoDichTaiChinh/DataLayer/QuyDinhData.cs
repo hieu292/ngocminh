@@ -11,7 +11,9 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
         public DataTable LayDsQuyDinh()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM QUYDINH");
-            m_QuyDinhData.Load(cmd);
+            DataService dS = new DataService();
+            dS.Load(cmd);
+            m_QuyDinhData = dS;
             return m_QuyDinhData;
         }
 

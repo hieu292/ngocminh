@@ -41,11 +41,17 @@ namespace QuanLyGiaoDichTaiChinh
                 return;
             }
 
+            if (txtTenNguoiDung.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên người dùng!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTenNguoiDung.Focus();
+                return;
+            }
+
             m_Row["MaLoaiNguoiDung"] = cboLoaiNguoiDung.SelectedValue;
             m_Row["TenNguoiDung"] = txtTenNguoiDung.Text;
             m_Row["MatKhau"] = Utilities.Encrypt(txtMatKhau.Text, true);
-            if(m_NguoiDungCtrl.LuuNguoiDung())
-                this.DialogResult = DialogResult.OK;
+            this.DialogResult = DialogResult.OK;
         }
 
         private void txtTenNguoiDung_KeyDown(object sender, KeyEventArgs e)

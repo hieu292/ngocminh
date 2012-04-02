@@ -11,7 +11,9 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
         public DataTable LayDsLoaiNguoiDung()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM LOAINGUOIDUNG");
-            m_LoaiNguoiDungData.Load(cmd);
+            DataService dS = new DataService();
+            dS.Load(cmd);
+            m_LoaiNguoiDungData = dS;
             return m_LoaiNguoiDungData;
         }
 

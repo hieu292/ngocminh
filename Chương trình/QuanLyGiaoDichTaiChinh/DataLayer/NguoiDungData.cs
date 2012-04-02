@@ -12,21 +12,34 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
         public DataTable LayDsNguoiDung()
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM NGUOIDUNG");
-            m_NguoiDungData.Load(cmd);
+            DataService dS = new DataService();
+            dS.Load(cmd);
+            m_NguoiDungData = dS;
             DataColumn[] dc = {m_NguoiDungData.Columns[0]};
             m_NguoiDungData.PrimaryKey = dc;
             return m_NguoiDungData;
         }
 
-        public DataTable LayDsNguoiDung(String m_Username)
+        public DataTable LayDsNguoiDung(String tenDangNhap)
         {
             SqlCommand cmd = new SqlCommand("SELECT * FROM NGUOIDUNG WHERE TenDangNhap = @ten");
-            cmd.Parameters.Add("ten", SqlDbType.VarChar).Value = m_Username;
+            cmd.Parameters.Add("ten", SqlDbType.VarChar).Value = tenDangNhap;
 
-            m_NguoiDungData.Load(cmd);
+            DataService dS = new DataService();
+            dS.Load(cmd);
+            m_NguoiDungData = dS;
             return m_NguoiDungData;
         }
 
+        public Boolean isDuplicate(String tenDangNhap)
+        {
+            foreach (DataRow dr in m_NguoiDungData.Rows)
+            {
+                if (dr["TenDangNhap"].ToString() == tenDangNhap)
+                    return true;
+            }
+            return false;
+        }
         public DataRow FindRow(int maNguoiDung)
         {
             return m_NguoiDungData.Rows.Find(maNguoiDung);
@@ -47,9 +60,9 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
             return m_NguoiDungData.ExecuteNoneQuery() > 0;
         }
 
-        public void ChangePassword(String userName, String newPassword)
+        public void DoiMatKhau(String tenDangNhap, String matKhauMoi)
         {
-            m_NguoiDungData.ChangePassword(userName,newPassword);
+            m_NguoiDungData.ChangePassword(tenDangNhap,matKhauMoi);
         }
     }
 }
