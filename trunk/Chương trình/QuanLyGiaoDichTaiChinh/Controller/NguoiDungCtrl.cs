@@ -21,6 +21,11 @@ namespace QuanLyGiaoDichTaiChinh.Controller
         }
         #endregion
 
+        public Boolean isDuplicate(String tenDangNhap)
+        {
+            return m_NguoiDungData.isDuplicate(tenDangNhap);
+        }
+
         #region Hien thi ComboBox
         public void HienThiComboBox(ComboBox comboBox)
         {
@@ -98,7 +103,7 @@ namespace QuanLyGiaoDichTaiChinh.Controller
         #region Doi mat khau
         public void ChangePassword(String userName, String newPassword)
         {
-            m_NguoiDungData.ChangePassword(userName, Utilities.Encrypt(newPassword, true));
+            m_NguoiDungData.DoiMatKhau(userName, Utilities.Encrypt(newPassword, true));
         }
         #endregion
     }

@@ -32,11 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNguoiDung));
             this.dgvNguoiDung = new System.Windows.Forms.DataGridView();
-            this.colMaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaLoai = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colTenDNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,10 +48,16 @@
             this.bindingNavigatorUpdateItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorRefreshItem = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.lblStatus = new System.Windows.Forms.ToolStripLabel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenDNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNguoiDung)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorNguoiDung)).BeginInit();
             this.bindingNavigatorNguoiDung.SuspendLayout();
@@ -90,24 +92,6 @@
             this.dgvNguoiDung.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvNguoiDung.Size = new System.Drawing.Size(600, 269);
             this.dgvNguoiDung.TabIndex = 70;
-            this.dgvNguoiDung.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvNguoiDung_DataError);
-            // 
-            // colMaND
-            // 
-            this.colMaND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colMaND.DataPropertyName = "MaNguoiDung";
-            this.colMaND.HeaderText = "Mã người dùng";
-            this.colMaND.MaxInputLength = 6;
-            this.colMaND.Name = "colMaND";
-            this.colMaND.ReadOnly = true;
-            // 
-            // colTenND
-            // 
-            this.colTenND.DataPropertyName = "TenNguoiDung";
-            this.colTenND.HeaderText = "Tên người dùng";
-            this.colTenND.MaxInputLength = 30;
-            this.colTenND.Name = "colTenND";
-            this.colTenND.ReadOnly = true;
             // 
             // colMaLoai
             // 
@@ -119,29 +103,12 @@
             this.colMaLoai.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colMaLoai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // colTenDNhap
-            // 
-            this.colTenDNhap.DataPropertyName = "TenDangNhap";
-            this.colTenDNhap.FillWeight = 120F;
-            this.colTenDNhap.HeaderText = "Tên đăng nhập";
-            this.colTenDNhap.MaxInputLength = 30;
-            this.colTenDNhap.Name = "colTenDNhap";
-            this.colTenDNhap.ReadOnly = true;
-            // 
-            // colMatKhau
-            // 
-            this.colMatKhau.DataPropertyName = "MatKhau";
-            this.colMatKhau.HeaderText = "Mật khẩu";
-            this.colMatKhau.MaxInputLength = 30;
-            this.colMatKhau.Name = "colMatKhau";
-            this.colMatKhau.ReadOnly = true;
-            // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 25);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -194,7 +161,9 @@
             this.bindingNavigatorUpdateItem,
             this.bindingNavigatorDeleteItem,
             this.toolStripSeparator1,
-            this.bindingNavigatorRefreshItem});
+            this.bindingNavigatorRefreshItem,
+            this.saveToolStripButton,
+            this.lblStatus});
             this.bindingNavigatorNguoiDung.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigatorNguoiDung.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorNguoiDung.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -282,6 +251,24 @@
             this.bindingNavigatorRefreshItem.Text = "Làm tươi";
             this.bindingNavigatorRefreshItem.Click += new System.EventHandler(this.bindingNavigatorRefreshItem_Click);
             // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 28);
+            this.saveToolStripButton.Text = "Lưu";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(13, 28);
+            this.lblStatus.Text = "*";
+            this.lblStatus.ToolTipText = "Đã thay đổi dữ liệu";
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -289,6 +276,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Mã người dùng";
             this.dataGridViewTextBoxColumn1.MaxInputLength = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -296,6 +284,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên người dùng";
             this.dataGridViewTextBoxColumn2.MaxInputLength = 30;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 109;
             // 
             // dataGridViewTextBoxColumn3
@@ -305,6 +294,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Tên đăng nhập";
             this.dataGridViewTextBoxColumn3.MaxInputLength = 30;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 130;
             // 
             // dataGridViewTextBoxColumn4
@@ -313,7 +303,42 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Mật khẩu";
             this.dataGridViewTextBoxColumn4.MaxInputLength = 30;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 109;
+            // 
+            // colMaND
+            // 
+            this.colMaND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colMaND.DataPropertyName = "MaNguoiDung";
+            this.colMaND.HeaderText = "Mã người dùng";
+            this.colMaND.MaxInputLength = 6;
+            this.colMaND.Name = "colMaND";
+            this.colMaND.ReadOnly = true;
+            // 
+            // colTenND
+            // 
+            this.colTenND.DataPropertyName = "TenNguoiDung";
+            this.colTenND.HeaderText = "Tên người dùng";
+            this.colTenND.MaxInputLength = 30;
+            this.colTenND.Name = "colTenND";
+            this.colTenND.ReadOnly = true;
+            // 
+            // colTenDNhap
+            // 
+            this.colTenDNhap.DataPropertyName = "TenDangNhap";
+            this.colTenDNhap.FillWeight = 120F;
+            this.colTenDNhap.HeaderText = "Tên đăng nhập";
+            this.colTenDNhap.MaxInputLength = 30;
+            this.colTenDNhap.Name = "colTenDNhap";
+            this.colTenDNhap.ReadOnly = true;
+            // 
+            // colMatKhau
+            // 
+            this.colMatKhau.DataPropertyName = "MatKhau";
+            this.colMatKhau.HeaderText = "Mật khẩu";
+            this.colMatKhau.MaxInputLength = 30;
+            this.colMatKhau.Name = "colMatKhau";
+            this.colMatKhau.ReadOnly = true;
             // 
             // frmNguoiDung
             // 
@@ -363,5 +388,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripLabel lblStatus;
     }
 }

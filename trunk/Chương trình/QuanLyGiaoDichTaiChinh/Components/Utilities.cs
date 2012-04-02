@@ -14,6 +14,25 @@ namespace QuanLyGiaoDichTaiChinh.Components
     public static class Utilities
     {
         public static NguoiDungInfo NguoiDung;
+
+        public static Boolean KiemTraTruocKhiLuu(DataGridView datagridview, String strCheckCellName)
+        {
+            foreach (DataGridViewRow row in datagridview.Rows)
+            {
+                if (row.Cells[strCheckCellName].Value != null)
+                {
+                    String str = row.Cells[strCheckCellName].Value.ToString();
+                    if (str == "")
+                    {
+                        MessageBox.Show("Thông tin " + datagridview.Columns[strCheckCellName].HeaderText + " tại hàng số " + (int)(row.Index + 1)
+                            + " không hợp lệ!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         public static string Encrypt(string toEncrypt, bool useHashing)
         {
             String key = "minhngoc";
@@ -119,7 +138,7 @@ namespace QuanLyGiaoDichTaiChinh.Components
 
         public static Boolean RestoreDatabase()
         {
-
+            return true;
         }
     }
     #endregion
