@@ -246,45 +246,132 @@ CREATE TABLE HanTraNoNCC
 	KyHanNo int check(KyHanNo>0) default(1),
 	constraint fk_PNNNCC_HanTraNoNCC foreign key (SoPhieuNhanNo) references PhieuNhanNoNCC(SoPhieuNhanNo),
 )
-
-ALTER PROCEDURE Insert_PhieuThu
+---------------------------------------------------------------------------------------------------------
+-- CAC THU TUC
+---------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[Insert_PhieuThu]
 (
 	@MaKH varchar(5),
 	@NgayLap datetime,
 	@NgayThu datetime,
 	@MaKT int,
 	@SoTienThu bigint,
-	@GhiChu ntext
+	@GhiChu ntext,
+	@TinhTrang bit,
+	@MaPhieuThu int OUTPUT
 )
 AS
 BEGIN
 	DECLARE @TaiKhoanCo bigint
 	SET @TaiKhoanCo=0
-	SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
-	SET @TaiKhoanCo=@TaiKhoanCo+@SoTienThu
-	INSERT INTO PhieuThu(MaKH,NgayLap,NgayThu,MaKT,SoTienThu,GhiChu,Ton) 
-	Values (@MaKH, @NgayLap, @NgayThu, @MaKT, @SoTienThu,@GhiChu, @TaiKhoanCo)
-	UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+	IF @TinhTrang=1
+	BEGIN
+		SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+		SET @TaiKhoanCo=@TaiKhoanCo+@SoTienThu
+		UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+	END
+	INSERT INTO PhieuThu(MaKH,NgayLap,NgayThu,MaKT,SoTienThu,GhiChu,Ton,TinhTrang) 
+	Values (@MaKH, @NgayLap, @NgayThu, @MaKT, @SoTienThu,@GhiChu, @TaiKhoanCo,@TinhTrang)
+	SET @MaPhieuThu = SCOPE_IDENTITY()
 END
-
---EXEC Insert_PhieuThu 'KH001','10/4/2012','10/4/2012',1,1250000,N'asdf'
-CREATE PROCEDURE Insert_PhieuChi
+/*
+DECLARE @MaPhieuThu int
+EXEC Insert_PhieuThu 'KH001','10/4/2012','10/4/2012',1,1250000,N'asdf',1,@MaPhieuThu OUTPUT
+SELECT @MaPhieuThu
+*/
+ALTER PROCEDURE [dbo].[Insert_PhieuChi]
 (
 	@MaNV varchar(5),
 	@NgayLap datetime,
 	@NgayChi datetime,
 	@MaKC int,
 	@SoTienChi bigint,
-	@GhiChu ntext
+	@GhiChu ntext,
+	@TinhTrang bit,
+	@MaPhieuChi int OUTPUT
 )
 AS
 BEGIN
 	DECLARE @TaiKhoanCo bigint
 	SET @TaiKhoanCo=0
-	SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
-	SET @TaiKhoanCo=@TaiKhoanCo-@SoTienChi
-	INSERT INTO PhieuChi(MaNV,NgayLap,NgayChi,MaKC,SoTienChi,GhiChu,Ton) 
-	Values (@MaNV, @NgayLap, @NgayChi, @MaKC, @SoTienChi,@GhiChu, @TaiKhoanCo)
-	UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+	IF @TinhTrang=1
+	BEGIN
+		SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+		SET @TaiKhoanCo=@TaiKhoanCo-@SoTienChi
+		UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+	END
+	INSERT INTO PhieuChi(MaNV,NgayLap,NgayChi,MaKC,SoTienChi,GhiChu,Ton,TinhTrang) 
+	Values (@MaNV, @NgayLap, @NgayChi, @MaKC, @SoTienChi,@GhiChu, @TaiKhoanCo,@TinhTrang)
+	SET @MaPhieuChi = SCOPE_IDENTITY()
 END
---EXEC Insert_PhieuChi 'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf'
+/*
+DECLARE @MaPhieuChi int
+EXEC Insert_PhieuChi 'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf',0,@MaPhieuChi OUTPUT
+SELECT @MaPhieuChi
+*/
+CREATE PROCEDURE [dbo].[Update_PhieuThu]
+(
+	@SoPT int,
+	@MaKH varchar(5),
+	@NgayLap datetime,
+	@NgayThu datetime,
+	@MaKT int,
+	@SoTienThu bigint,
+	@GhiChu ntext,
+	@TinhTrang bit
+)
+AS
+BEGIN
+	DECLARE @TinhTrangCu bit
+	SELECT @TinhTrangCu = TinhTrang FROM PhieuThu WHERE SoPT = @SoPT
+	IF @TinhTrangCu=0
+	BEGIN
+		DECLARE @TaiKhoanCo bigint
+		SET @TaiKhoanCo=0
+		IF @TinhTrang=1
+		BEGIN
+			SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+			SET @TaiKhoanCo=@TaiKhoanCo+@SoTienThu
+			UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+		END
+		UPDATE PhieuThu SET MaKH = @MaKH, NgayLap = @NgayLap,NgayThu = @NgayThu,MaKT = @MaKT,
+			SoTienThu = @SoTienThu,GhiChu = @GhiChu,Ton = @TaiKhoanCo,TinhTrang = @TinhTrang
+		WHERE SoPT = @SoPT
+	END
+END
+/*
+EXEC Update_PhieuThu 1,'KH001','10/5/2012','11/5/2012',1,1250000,N'asdf',1
+*/
+CREATE PROCEDURE [dbo].[Update_PhieuChi]
+(
+	@SoPC int,
+	@MaNV varchar(5),
+	@NgayLap datetime,
+	@NgayChi datetime,
+	@MaKC int,
+	@SoTienChi bigint,
+	@GhiChu ntext,
+	@TinhTrang bit
+)
+AS
+BEGIN
+	DECLARE @TinhTrangCu bit
+	SELECT @TinhTrangCu = TinhTrang FROM PhieuChi WHERE SoPC = @SoPC
+	IF @TinhTrangCu=0
+	BEGIN
+		DECLARE @TaiKhoanCo bigint
+		SET @TaiKhoanCo=0
+		IF @TinhTrang=1
+		BEGIN
+			SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+			SET @TaiKhoanCo=@TaiKhoanCo-@SoTienChi
+			UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+		END
+		UPDATE PhieuChi SET MaNV = @MaNV, NgayLap = @NgayLap,NgayChi = @NgayChi,MaKC = @MaKC,
+			SoTienChi = @SoTienChi,GhiChu = @GhiChu,Ton = @TaiKhoanCo,TinhTrang = @TinhTrang
+		WHERE SoPC = @SoPC
+	END
+END
+/*
+EXEC Update_PhieuChi 4,'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf',1
+*/
