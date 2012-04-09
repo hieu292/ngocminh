@@ -3,7 +3,7 @@ CREATE TABLE KhachHang
 	MaKH varchar(5) primary key,
 	TenKH nvarchar(50) not null,
 	DiaChi nvarchar(100),
-	DienThoai varchar(11)
+	DienThoai varchar(11),
 )
 
 CREATE TABLE NhaCungCap
@@ -11,7 +11,7 @@ CREATE TABLE NhaCungCap
 	MaNCC varchar(5) primary key,
 	TenNCC nvarchar(50) not null,
 	DiaChi nvarchar(100),
-	DienThoai varchar(11)
+	DienThoai varchar(11),
 )
 
 CREATE TABLE KhoanThu
@@ -71,7 +71,7 @@ CREATE TABLE PhieuThu
 (
 	SoPT int primary key identity,
 	MaKH varchar(5) not null,
-	NgayLapPhieu datetime not null,
+	NgayLap datetime not null,
 	NgayThu datetime,
 	MaKT int not null,
 	SoTienThu bigint not null check(SoTienThu>0),
@@ -87,7 +87,7 @@ CREATE TABLE PhieuChi
 (
 	SoPC int primary key identity,
 	MaNV varchar(5) not null,
-	NgayLapPhieu datetime not null,
+	NgayLap datetime not null,
 	NgayChi datetime,
 	MaKC int not null,
 	SoTienChi bigint not null check(SoTienChi>0),
@@ -246,3 +246,45 @@ CREATE TABLE HanTraNoNCC
 	KyHanNo int check(KyHanNo>0) default(1),
 	constraint fk_PNNNCC_HanTraNoNCC foreign key (SoPhieuNhanNo) references PhieuNhanNoNCC(SoPhieuNhanNo),
 )
+
+ALTER PROCEDURE Insert_PhieuThu
+(
+	@MaKH varchar(5),
+	@NgayLap datetime,
+	@NgayThu datetime,
+	@MaKT int,
+	@SoTienThu bigint,
+	@GhiChu ntext
+)
+AS
+BEGIN
+	DECLARE @TaiKhoanCo bigint
+	SET @TaiKhoanCo=0
+	SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+	SET @TaiKhoanCo=@TaiKhoanCo+@SoTienThu
+	INSERT INTO PhieuThu(MaKH,NgayLap,NgayThu,MaKT,SoTienThu,GhiChu,Ton) 
+	Values (@MaKH, @NgayLap, @NgayThu, @MaKT, @SoTienThu,@GhiChu, @TaiKhoanCo)
+	UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+END
+
+--EXEC Insert_PhieuThu 'KH001','10/4/2012','10/4/2012',1,1250000,N'asdf'
+CREATE PROCEDURE Insert_PhieuChi
+(
+	@MaNV varchar(5),
+	@NgayLap datetime,
+	@NgayChi datetime,
+	@MaKC int,
+	@SoTienChi bigint,
+	@GhiChu ntext
+)
+AS
+BEGIN
+	DECLARE @TaiKhoanCo bigint
+	SET @TaiKhoanCo=0
+	SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+	SET @TaiKhoanCo=@TaiKhoanCo-@SoTienChi
+	INSERT INTO PhieuChi(MaNV,NgayLap,NgayChi,MaKC,SoTienChi,GhiChu,Ton) 
+	Values (@MaNV, @NgayLap, @NgayChi, @MaKC, @SoTienChi,@GhiChu, @TaiKhoanCo)
+	UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+END
+--EXEC Insert_PhieuChi 'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf'

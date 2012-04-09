@@ -50,10 +50,6 @@
             this.bindingNavigatorRefreshItem = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.lblStatus = new System.Windows.Forms.ToolStripLabel();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenDNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -269,43 +265,6 @@
             this.lblStatus.Text = "*";
             this.lblStatus.ToolTipText = "Đã thay đổi dữ liệu";
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaNguoiDung";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã người dùng";
-            this.dataGridViewTextBoxColumn1.MaxInputLength = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenNguoiDung";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên người dùng";
-            this.dataGridViewTextBoxColumn2.MaxInputLength = 30;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 109;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "TenDangNhap";
-            this.dataGridViewTextBoxColumn3.FillWeight = 120F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên đăng nhập";
-            this.dataGridViewTextBoxColumn3.MaxInputLength = 30;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MatKhau";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Mật khẩu";
-            this.dataGridViewTextBoxColumn4.MaxInputLength = 30;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 109;
-            // 
             // colMaND
             // 
             this.colMaND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -384,10 +343,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn colMaLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenDNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMatKhau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolStripLabel lblStatus;
     }

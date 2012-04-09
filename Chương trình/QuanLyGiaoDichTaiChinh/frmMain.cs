@@ -348,5 +348,10 @@ namespace QuanLyGiaoDichTaiChinh
         {
             AddTab(new frmKhoanChi());
         }
+
+        private void phieuThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmPhieuThu());
+        }
     }
 }
