@@ -308,8 +308,8 @@
             this.hanTraLaiKhachHangToolStripMenuItem,
             this.hanTraNoKhachHangToolStripMenuItem});
             this.quanLyChoVayToolstipMenuItem.Name = "quanLyChoVayToolstipMenuItem";
-            this.quanLyChoVayToolstipMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.quanLyChoVayToolstipMenuItem.Text = "Quản lý cho vay";
+            this.quanLyChoVayToolstipMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.quanLyChoVayToolstipMenuItem.Text = "Cho vay";
             // 
             // giaoDichKhachHangToolStripMenuItem
             // 
@@ -364,8 +364,8 @@
             this.hanTraLaiNhaCungCapToolStripMenuItem,
             this.hanTraNoNhaCungCapToolStripMenuItem});
             this.quanLyVayToolStripMenuItem.Name = "quanLyVayToolStripMenuItem";
-            this.quanLyVayToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.quanLyVayToolStripMenuItem.Text = "Quản lý vay";
+            this.quanLyVayToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.quanLyVayToolStripMenuItem.Text = "Vay";
             // 
             // giaoDichNhaCungCapToolStripMenuItem
             // 
@@ -414,19 +414,20 @@
             this.phieuThuToolStripMenuItem,
             this.phieuChiToolStripMenuItem});
             this.quanLyThuChiToolStripMenuItem.Name = "quanLyThuChiToolStripMenuItem";
-            this.quanLyThuChiToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.quanLyThuChiToolStripMenuItem.Text = "Quản lý thu chi";
+            this.quanLyThuChiToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.quanLyThuChiToolStripMenuItem.Text = "Thu chi";
             // 
             // phieuThuToolStripMenuItem
             // 
             this.phieuThuToolStripMenuItem.Name = "phieuThuToolStripMenuItem";
-            this.phieuThuToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.phieuThuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.phieuThuToolStripMenuItem.Text = "Phiếu thu";
+            this.phieuThuToolStripMenuItem.Click += new System.EventHandler(this.phieuThuToolStripMenuItem_Click);
             // 
             // phieuChiToolStripMenuItem
             // 
             this.phieuChiToolStripMenuItem.Name = "phieuChiToolStripMenuItem";
-            this.phieuChiToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.phieuChiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.phieuChiToolStripMenuItem.Text = "Phiếu chi";
             // 
             // timKiemToolStripMenuItem

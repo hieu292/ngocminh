@@ -98,10 +98,10 @@
     <Compile Include="Controller\QuyDinhCtrl.cs" />
     <Compile Include="DataLayer\KhoanChiData.cs" />
     <Compile Include="DataLayer\KhoanThuData.cs" />
-    <Compile Include="Forms\frmKhoanChi.cs">
+    <Compile Include="Forms\PhieuChi\frmKhoanChi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmKhoanChi.Designer.cs">
+    <Compile Include="Forms\PhieuChi\frmKhoanChi.Designer.cs">
       <DependentUpon>frmKhoanChi.cs</DependentUpon>
     </Compile>
     <Compile Include="DataLayer\NhanVienData.cs" />
@@ -110,41 +110,47 @@
     <Compile Include="DataLayer\LoaiNguoiDungData.cs" />
     <Compile Include="DataLayer\NguoiDungData.cs" />
     <Compile Include="DataLayer\QuyDinhData.cs" />
-    <Compile Include="Forms\frmKhachHang.cs">
+    <Compile Include="Forms\KhachHang\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmKhachHang.designer.cs">
+    <Compile Include="Forms\KhachHang\frmKhachHang.designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmThemNguoiDung.cs">
+    <Compile Include="Forms\NguoiDung\frmThemNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmThemNguoiDung.Designer.cs">
+    <Compile Include="Forms\NguoiDung\frmThemNguoiDung.Designer.cs">
       <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSuaNguoiDung.cs">
+    <Compile Include="Forms\NguoiDung\frmSuaNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSuaNguoiDung.Designer.cs">
+    <Compile Include="Forms\NguoiDung\frmSuaNguoiDung.Designer.cs">
       <DependentUpon>frmSuaNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNhaCungCap.cs">
+    <Compile Include="Forms\NhaCungCap\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNhaCungCap.Designer.cs">
+    <Compile Include="Forms\NhaCungCap\frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNhanVien.cs">
+    <Compile Include="Forms\PhieuChi\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNhanVien.Designer.cs">
+    <Compile Include="Forms\PhieuChi\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmKhoanThu.cs">
+    <Compile Include="Forms\PhieuThu\frmKhoanThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmKhoanThu.Designer.cs">
+    <Compile Include="Forms\PhieuThu\frmKhoanThu.Designer.cs">
       <DependentUpon>frmKhoanThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuThu\frmPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuThu\frmPhieuThu.designer.cs">
+      <DependentUpon>frmPhieuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -152,16 +158,16 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmNguoiDung.cs">
+    <Compile Include="Forms\NguoiDung\frmNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmNguoiDung.Designer.cs">
+    <Compile Include="Forms\NguoiDung\frmNguoiDung.Designer.cs">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmLoaiNguoiDung.cs">
+    <Compile Include="Forms\NguoiDung\frmLoaiNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmLoaiNguoiDung.Designer.cs">
+    <Compile Include="Forms\NguoiDung\frmLoaiNguoiDung.Designer.cs">
       <DependentUpon>frmLoaiNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\frmDangNhap.cs">
@@ -190,43 +196,47 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmKhoanChi.resx">
+    <EmbeddedResource Include="Forms\PhieuChi\frmKhoanChi.resx">
       <DependentUpon>frmKhoanChi.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmKhachHang.resx">
+    <EmbeddedResource Include="Forms\KhachHang\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmThemNguoiDung.resx">
+    <EmbeddedResource Include="Forms\NguoiDung\frmThemNguoiDung.resx">
       <DependentUpon>frmThemNguoiDung.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSuaNguoiDung.resx">
+    <EmbeddedResource Include="Forms\NguoiDung\frmSuaNguoiDung.resx">
       <DependentUpon>frmSuaNguoiDung.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhaCungCap.resx">
+    <EmbeddedResource Include="Forms\NhaCungCap\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNhanVien.resx">
+    <EmbeddedResource Include="Forms\PhieuChi\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmKhoanThu.resx">
+    <EmbeddedResource Include="Forms\PhieuThu\frmKhoanThu.resx">
       <DependentUpon>frmKhoanThu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuThu\frmPhieuThu.resx">
+      <DependentUpon>frmPhieuThu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmNguoiDung.resx">
+    <EmbeddedResource Include="Forms\NguoiDung\frmNguoiDung.resx">
       <DependentUpon>frmNguoiDung.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmLoaiNguoiDung.resx">
+    <EmbeddedResource Include="Forms\NguoiDung\frmLoaiNguoiDung.resx">
       <DependentUpon>frmLoaiNguoiDung.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
