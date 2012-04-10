@@ -249,16 +249,16 @@ CREATE TABLE HanTraNoNCC
 ---------------------------------------------------------------------------------------------------------
 -- CAC THU TUC
 ---------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE [dbo].[Insert_PhieuThu]
+ALTER PROCEDURE [dbo].[Insert_PhieuThu]
 (
+	@SoPT int OUTPUT,
 	@MaKH varchar(5),
 	@NgayLap datetime,
 	@NgayThu datetime,
 	@MaKT int,
 	@SoTienThu bigint,
 	@GhiChu ntext,
-	@TinhTrang bit,
-	@MaPhieuThu int OUTPUT
+	@TinhTrang bit
 )
 AS
 BEGIN
@@ -272,23 +272,23 @@ BEGIN
 	END
 	INSERT INTO PhieuThu(MaKH,NgayLap,NgayThu,MaKT,SoTienThu,GhiChu,Ton,TinhTrang) 
 	Values (@MaKH, @NgayLap, @NgayThu, @MaKT, @SoTienThu,@GhiChu, @TaiKhoanCo,@TinhTrang)
-	SET @MaPhieuThu = SCOPE_IDENTITY()
+	SET @SoPT = SCOPE_IDENTITY()
 END
 /*
-DECLARE @MaPhieuThu int
-EXEC Insert_PhieuThu 'KH001','10/4/2012','10/4/2012',1,1250000,N'asdf',1,@MaPhieuThu OUTPUT
-SELECT @MaPhieuThu
+DECLARE @SoPT int
+EXEC Insert_PhieuThu 'KH001','10/4/2012','10/4/2012',1,1250000,N'asdf',1,@SoPT OUTPUT
+SELECT @SoPT
 */
 ALTER PROCEDURE [dbo].[Insert_PhieuChi]
 (
+	@SoPC int OUTPUT,
 	@MaNV varchar(5),
 	@NgayLap datetime,
 	@NgayChi datetime,
 	@MaKC int,
 	@SoTienChi bigint,
 	@GhiChu ntext,
-	@TinhTrang bit,
-	@MaPhieuChi int OUTPUT
+	@TinhTrang bit
 )
 AS
 BEGIN
@@ -302,12 +302,12 @@ BEGIN
 	END
 	INSERT INTO PhieuChi(MaNV,NgayLap,NgayChi,MaKC,SoTienChi,GhiChu,Ton,TinhTrang) 
 	Values (@MaNV, @NgayLap, @NgayChi, @MaKC, @SoTienChi,@GhiChu, @TaiKhoanCo,@TinhTrang)
-	SET @MaPhieuChi = SCOPE_IDENTITY()
+	SET @SoPC = SCOPE_IDENTITY()
 END
 /*
-DECLARE @MaPhieuChi int
-EXEC Insert_PhieuChi 'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf',0,@MaPhieuChi OUTPUT
-SELECT @MaPhieuChi
+DECLARE @SoPC int
+EXEC Insert_PhieuChi 'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf',0,@SoPC OUTPUT
+SELECT @SoPC
 */
 CREATE PROCEDURE [dbo].[Update_PhieuThu]
 (
@@ -375,3 +375,78 @@ END
 /*
 EXEC Update_PhieuChi 4,'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf',1
 */
+CREATE PROCEDURE [dbo].[Delete_PhieuThu]
+(
+	@SoPT int
+)
+AS
+BEGIN
+	DECLARE @TinhTrang bit
+	SELECT @TinhTrang = TinhTrang FROM PhieuThu WHERE SoPT = @SoPT
+	IF @TinhTrang=0
+		DELETE FROM PhieuThu WHERE SoPT = @SoPT
+END
+/*
+EXEC Delete_PhieuThu 1
+*/
+CREATE PROCEDURE [dbo].[Delete_PhieuChi]
+(
+	@SoPC int
+)
+AS
+BEGIN
+	DECLARE @TinhTrang bit
+	SELECT @TinhTrang = TinhTrang FROM PhieuChi WHERE SoPC = @SoPC
+	IF @TinhTrang=0
+		DELETE FROM PhieuChi WHERE SoPC = @SoPC
+END
+/*
+EXEC Delete_PhieuChi 1
+*/
+CREATE PROCEDURE [dbo].[XacNhan_PhieuThu]
+(
+	@SoPT int
+)
+AS
+BEGIN
+	DECLARE @TinhTrangCu bit
+	SELECT @TinhTrangCu = TinhTrang FROM PhieuThu WHERE SoPT = @SoPT
+	IF @TinhTrangCu=0
+	BEGIN
+		DECLARE @TaiKhoanCo bigint, @SoTienThu bigint
+		SET @TaiKhoanCo=0
+		SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+		SELECT @SoTienThu=SoTienThu FROM PhieuThu WHERE SoPT=@SoPT
+		SET @TaiKhoanCo=@TaiKhoanCo+@SoTienThu
+		UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+		UPDATE PhieuThu SET Ton = @TaiKhoanCo,TinhTrang = 1
+		WHERE SoPT = @SoPT
+	END
+END
+/*
+EXEC Update_PhieuThu 1,'KH001','10/5/2012','11/5/2012',1,1250000,N'asdf',1
+*/
+CREATE PROCEDURE [dbo].[XacNhan_PhieuChi]
+(
+	@SoPC int
+)
+AS
+BEGIN
+	DECLARE @TinhTrangCu bit
+	SELECT @TinhTrangCu = TinhTrang FROM PhieuChi WHERE SoPC = @SoPC
+	IF @TinhTrangCu=0
+	BEGIN
+		DECLARE @TaiKhoanCo bigint, @SoTienChi bigint
+		SET @TaiKhoanCo=0
+		SELECT @TaiKhoanCo=TaiKhoanCo FROM QuyDinh
+		SELECT @SoTienChi=SoTienChi FROM PhieuChi WHERE SoPC=@SoPC
+		SET @TaiKhoanCo=@TaiKhoanCo+@SoTienChi
+		UPDATE QuyDinh SET TaiKhoanCo=@TaiKhoanCo
+		UPDATE PhieuChi SET Ton = @TaiKhoanCo,TinhTrang = 1
+		WHERE SoPC = @SoPC
+	END
+END
+/*
+EXEC Update_PhieuChi 4,'NV001','10/4/2012','10/4/2012',1,1250000,N'asdf',1
+*/
+SELECT * FROM PhieuThu WHERE SoPT LIKE '%%' AND TinhTrang LIKE '%1%' ORDER BY SoPT DESC
