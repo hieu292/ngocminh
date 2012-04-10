@@ -67,11 +67,9 @@ namespace QuanLyGiaoDichTaiChinh.DataLayer
         public DataTable TimKiemKhoanThu(String tuKhoa)
         {
             SqlCommand cmd = new SqlCommand();
-
             String sql = TruyVanChung() + "WHERE MaKT LIKE '%' + @tuKhoa + '%' " +
             "OR TenKT LIKE '%' + @tuKhoa + '%' " +
             "OR GhiChu LIKE '%' + @tuKhoa + '%' ";
-
             cmd.Parameters.Add("tuKhoa", SqlDbType.NVarChar).Value = tuKhoa;
             cmd.CommandText = sql;
             m_KhoanThuData.Load(cmd);

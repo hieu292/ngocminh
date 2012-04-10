@@ -354,6 +354,11 @@ namespace QuanLyGiaoDichTaiChinh
             AddTab(new frmPhieuThu());
         }
 
+        private void phieuChiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddTab(new frmPhieuChi());
+        }
+
         private void lblDongHo_Click(object sender, EventArgs e)
         {
 
