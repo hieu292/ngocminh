@@ -43,3 +43,8 @@ D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichT
 D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKetNoiCSDL.resources
 D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmQuyDinh.resources
 D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.Properties.Resources.resources
+E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmThemPhieuChi.resources
+E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmPhieuChi.resources
+E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmSuaPhieuChi.resources
+E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmSuaPhieuThu.resources
+E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmThemPhieuThu.resources
