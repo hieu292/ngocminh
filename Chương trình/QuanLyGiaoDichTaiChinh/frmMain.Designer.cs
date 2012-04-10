@@ -260,40 +260,40 @@
             // khachHangToolStripMenuItem
             // 
             this.khachHangToolStripMenuItem.Name = "khachHangToolStripMenuItem";
-            this.khachHangToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.khachHangToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.khachHangToolStripMenuItem.Text = "Khách hàng";
             this.khachHangToolStripMenuItem.Click += new System.EventHandler(this.khachHangToolStripMenuItem_Click);
             // 
             // nhaCungCapToolStripMenuItem
             // 
             this.nhaCungCapToolStripMenuItem.Name = "nhaCungCapToolStripMenuItem";
-            this.nhaCungCapToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nhaCungCapToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.nhaCungCapToolStripMenuItem.Text = "Nhà cung cấp";
             this.nhaCungCapToolStripMenuItem.Click += new System.EventHandler(this.nhaCungCapToolStripMenuItem_Click);
             // 
             // nhanVienToolStripMenuItem
             // 
             this.nhanVienToolStripMenuItem.Name = "nhanVienToolStripMenuItem";
-            this.nhanVienToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nhanVienToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.nhanVienToolStripMenuItem.Text = "Nhân viên";
             this.nhanVienToolStripMenuItem.Click += new System.EventHandler(this.nhanVienToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(145, 6);
             // 
             // khoanThuToolStripMenuItem
             // 
             this.khoanThuToolStripMenuItem.Name = "khoanThuToolStripMenuItem";
-            this.khoanThuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.khoanThuToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.khoanThuToolStripMenuItem.Text = "Khoản thu";
             this.khoanThuToolStripMenuItem.Click += new System.EventHandler(this.khoanThuToolStripMenuItem_Click);
             // 
             // khoanChiToolStripMenuItem
             // 
             this.khoanChiToolStripMenuItem.Name = "khoanChiToolStripMenuItem";
-            this.khoanChiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.khoanChiToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.khoanChiToolStripMenuItem.Text = "Khoản chi";
             this.khoanChiToolStripMenuItem.Click += new System.EventHandler(this.khoanChiToolStripMenuItem_Click);
             // 
@@ -420,14 +420,14 @@
             // phieuThuToolStripMenuItem
             // 
             this.phieuThuToolStripMenuItem.Name = "phieuThuToolStripMenuItem";
-            this.phieuThuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.phieuThuToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.phieuThuToolStripMenuItem.Text = "Phiếu thu";
             this.phieuThuToolStripMenuItem.Click += new System.EventHandler(this.phieuThuToolStripMenuItem_Click);
             // 
             // phieuChiToolStripMenuItem
             // 
             this.phieuChiToolStripMenuItem.Name = "phieuChiToolStripMenuItem";
-            this.phieuChiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.phieuChiToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.phieuChiToolStripMenuItem.Text = "Phiếu chi";
             // 
             // timKiemToolStripMenuItem
@@ -543,6 +543,7 @@
             this.hienThiToolStripMenuItem.Name = "hienThiToolStripMenuItem";
             this.hienThiToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.hienThiToolStripMenuItem.Text = "Hiển thị";
+            this.hienThiToolStripMenuItem.Click += new System.EventHandler(this.hienThiToolStripMenuItem_Click);
             // 
             // thanhCongCuToolStripMenuItem
             // 
@@ -630,7 +631,7 @@
             this.lblTinhTrangKetNoi.BackColor = System.Drawing.Color.Transparent;
             this.lblTinhTrangKetNoi.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.lblTinhTrangKetNoi.Name = "lblTinhTrangKetNoi";
-            this.lblTinhTrangKetNoi.Size = new System.Drawing.Size(283, 16);
+            this.lblTinhTrangKetNoi.Size = new System.Drawing.Size(273, 16);
             this.lblTinhTrangKetNoi.Spring = true;
             this.lblTinhTrangKetNoi.Text = "Chưa kết nối CSDL!";
             this.lblTinhTrangKetNoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -641,7 +642,7 @@
             this.lblNguoiDangNhap.BackColor = System.Drawing.Color.Transparent;
             this.lblNguoiDangNhap.Margin = new System.Windows.Forms.Padding(10, 3, 0, 3);
             this.lblNguoiDangNhap.Name = "lblNguoiDangNhap";
-            this.lblNguoiDangNhap.Size = new System.Drawing.Size(273, 16);
+            this.lblNguoiDangNhap.Size = new System.Drawing.Size(263, 16);
             this.lblNguoiDangNhap.Spring = true;
             this.lblNguoiDangNhap.Text = "Chưa đăng nhập";
             this.lblNguoiDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -667,11 +668,12 @@
             this.lblDongHo.BackColor = System.Drawing.Color.Transparent;
             this.lblDongHo.Margin = new System.Windows.Forms.Padding(0, 3, 10, 3);
             this.lblDongHo.Name = "lblDongHo";
-            this.lblDongHo.Size = new System.Drawing.Size(273, 16);
+            this.lblDongHo.Size = new System.Drawing.Size(263, 16);
             this.lblDongHo.Spring = true;
             this.lblDongHo.Text = "Đồng hồ";
             this.lblDongHo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblDongHo.ToolTipText = "Thời gian hiện tại";
+            this.lblDongHo.Click += new System.EventHandler(this.lblDongHo_Click);
             // 
             // timer1
             // 

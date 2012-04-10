@@ -19,5 +19,10 @@ namespace QuanLyGiaoDichTaiChinh
         {
 
         }
+
+        private void bindingNavigatorPage_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }
