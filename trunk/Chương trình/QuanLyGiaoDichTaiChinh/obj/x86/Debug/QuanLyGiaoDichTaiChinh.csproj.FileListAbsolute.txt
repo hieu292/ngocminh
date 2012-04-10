@@ -21,3 +21,25 @@ E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương tr
 E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKhoanThu.resources
 E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKhoanChi.resources
 E:\Tai lieu\Tai lieu ki 8\Cac quy trinh phat trien phan mem\ngocminh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmPhieuThu.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\bin\x86\Debug\QuanLyGiaoDichTaiChinh.exe.config
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.exe
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.pdb
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\bin\x86\Debug\QuanLyGiaoDichTaiChinh.exe
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\bin\x86\Debug\QuanLyGiaoDichTaiChinh.pdb
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKhoanChi.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKhachHang.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmThemNguoiDung.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmSuaNguoiDung.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmNhaCungCap.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmNhanVien.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKhoanThu.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmPhieuThu.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmMain.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmNguoiDung.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmLoaiNguoiDung.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmDangNhap.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmDoiMatKhau.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmKetNoiCSDL.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.frmQuyDinh.resources
+D:\NgocMinh\Chương trình\QuanLyGiaoDichTaiChinh\obj\x86\Debug\QuanLyGiaoDichTaiChinh.Properties.Resources.resources

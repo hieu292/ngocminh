@@ -353,5 +353,15 @@ namespace QuanLyGiaoDichTaiChinh
         {
             AddTab(new frmPhieuThu());
         }
+
+        private void lblDongHo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hienThiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
