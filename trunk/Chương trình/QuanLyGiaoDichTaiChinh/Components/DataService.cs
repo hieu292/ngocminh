@@ -27,8 +27,8 @@ namespace QuanLyGiaoDichTaiChinh
         public int Load(SqlCommand m_Sql)
         {
             DataConnect.MoKetNoi();
-            if (DataConnect.DaKetNoi == false) return 1;
-            int result = 1;
+            if (DataConnect.DaKetNoi == false) return 0;
+            int result = 0;
             m_Command = m_Sql;
             try
             {
@@ -56,8 +56,8 @@ namespace QuanLyGiaoDichTaiChinh
         public int ExecuteNoneQuery()
         {
             DataConnect.MoKetNoi();
-            if (DataConnect.DaKetNoi == false) return 1;
-            int result = 1;
+            if (DataConnect.DaKetNoi == false) return 0;
+            int result = 0;
             SqlTransaction m_SqlTran = null;
             try
             {
@@ -91,8 +91,8 @@ namespace QuanLyGiaoDichTaiChinh
         public int ExecuteNoneQuery(SqlCommand m_Sql)
         {
             DataConnect.MoKetNoi();
-            if (DataConnect.DaKetNoi == false) return 1;
-            int result = 1;
+            if (DataConnect.DaKetNoi == false) return 0;
+            int result = 0;
             SqlTransaction m_SqlTran = null;
             try
             {
@@ -158,8 +158,8 @@ namespace QuanLyGiaoDichTaiChinh
         public int ChangePassword(String userName, String newPassword)
         {
             DataConnect.MoKetNoi();
-            if (DataConnect.DaKetNoi == false) return 1;
-            int result = 1;
+            if (DataConnect.DaKetNoi == false) return 0;
+            int result = 0;
             m_DataAdapter = new SqlDataAdapter();
             
             SqlCommand cmd = new SqlCommand("UPDATE NGUOIDUNG SET MatKhau = @matkhau WHERE TenDNhap = @tendangnhap");

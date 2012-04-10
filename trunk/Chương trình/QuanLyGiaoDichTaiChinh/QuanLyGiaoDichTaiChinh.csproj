@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -29,11 +29,6 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -93,6 +88,8 @@
     </Compile>
     <Compile Include="Components\DataConnect.cs" />
     <Compile Include="Components\Utilities.cs" />
+    <Compile Include="Controller\PhieuChiCtrl.cs" />
+    <Compile Include="Controller\PhieuThuCtrl.cs" />
     <Compile Include="Controller\KhoanChiCtrl.cs" />
     <Compile Include="Controller\KhoanThuCtrl.cs" />
     <Compile Include="Controller\NhanVienCtrl.cs" />
@@ -101,8 +98,10 @@
     <Compile Include="Controller\LoaiNguoiDungCtrl.cs" />
     <Compile Include="Controller\NguoiDungCtrl.cs" />
     <Compile Include="Controller\QuyDinhCtrl.cs" />
+    <Compile Include="DataLayer\PhieuChiData.cs" />
     <Compile Include="DataLayer\KhoanChiData.cs" />
     <Compile Include="DataLayer\KhoanThuData.cs" />
+    <Compile Include="DataLayer\PhieuThuData.cs" />
     <Compile Include="Forms\PhieuChi\frmKhoanChi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,10 +138,10 @@
     <Compile Include="Forms\NhaCungCap\frmNhaCungCap.Designer.cs">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PhieuChi\frmNhanVien.cs">
+    <Compile Include="Forms\NhanVien\frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PhieuChi\frmNhanVien.Designer.cs">
+    <Compile Include="Forms\NhanVien\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PhieuThu\frmKhoanThu.cs">
@@ -156,6 +155,36 @@
     </Compile>
     <Compile Include="Forms\PhieuThu\frmPhieuThu.designer.cs">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuChi\frmThemPhieuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuChi\frmThemPhieuChi.designer.cs">
+      <DependentUpon>frmThemPhieuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuChi\frmPhieuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuChi\frmPhieuChi.designer.cs">
+      <DependentUpon>frmPhieuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuChi\frmSuaPhieuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuChi\frmSuaPhieuChi.designer.cs">
+      <DependentUpon>frmSuaPhieuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuThu\frmSuaPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuThu\frmSuaPhieuThu.designer.cs">
+      <DependentUpon>frmSuaPhieuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhieuThu\frmThemPhieuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhieuThu\frmThemPhieuThu.designer.cs">
+      <DependentUpon>frmThemPhieuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -221,7 +250,7 @@
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PhieuChi\frmNhanVien.resx">
+    <EmbeddedResource Include="Forms\NhanVien\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -231,6 +260,26 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuThu\frmPhieuThu.resx">
       <DependentUpon>frmPhieuThu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuChi\frmThemPhieuChi.resx">
+      <DependentUpon>frmThemPhieuChi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuChi\frmPhieuChi.resx">
+      <DependentUpon>frmPhieuChi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuChi\frmSuaPhieuChi.resx">
+      <DependentUpon>frmSuaPhieuChi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuThu\frmSuaPhieuThu.resx">
+      <DependentUpon>frmSuaPhieuThu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuThu\frmThemPhieuThu.resx">
+      <DependentUpon>frmThemPhieuThu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
@@ -326,6 +375,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />

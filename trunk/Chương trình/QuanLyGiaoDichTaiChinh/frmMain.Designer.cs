@@ -429,6 +429,7 @@
             this.phieuChiToolStripMenuItem.Name = "phieuChiToolStripMenuItem";
             this.phieuChiToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.phieuChiToolStripMenuItem.Text = "Phiếu chi";
+            this.phieuChiToolStripMenuItem.Click += new System.EventHandler(this.phieuChiToolStripMenuItem_Click);
             // 
             // timKiemToolStripMenuItem
             // 

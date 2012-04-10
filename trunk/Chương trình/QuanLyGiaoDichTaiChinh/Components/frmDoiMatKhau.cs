@@ -58,10 +58,9 @@ namespace QuanLyGiaoDichTaiChinh
             String m_Username = Utilities.NguoiDung.TenDangNhap;
             String m_Password = Utilities.NguoiDung.MatKhau;
 
-            String m_OldPassword = txtMatKhauCu.Text;
+            String m_OldPassword = Utilities.Encrypt(txtMatKhauCu.Text,true);
             String m_NewPassword = txtMatKhauMoi.Text;
             String m_ReNPassword = txtNhapLaiMatKhauMoi.Text;
-
             if (m_Password != m_OldPassword)
             {
                 lblLoiMatKhauCu.Text = "Nhập sai mật khẩu cũ!";
