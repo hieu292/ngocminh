@@ -1,0 +1,1 @@
+Xây dựng hệ thống quản lý giao dịch tài chính của công ty TNHH đầu tư và phát triển thương mại Ngọc Minh
